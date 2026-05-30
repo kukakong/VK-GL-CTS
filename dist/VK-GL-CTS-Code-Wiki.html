@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VK-GL-CTS Code Wiki</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --border-color: #30363d;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --text-link: #58a6ff;
+            --accent-blue: #1f6feb;
+            --accent-green: #238636;
+            --accent-orange: #d29922;
+            --accent-purple: #8957e5;
+            --accent-red: #da3633;
+            --accent-cyan: #39d353;
+            --code-bg: #0d1117;
+            --table-header-bg: #1c2128;
+            --table-row-hover: #1c2128;
+            --scrollbar-thumb: #30363d;
+            --scrollbar-track: #0d1117;
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg-primary: #ffffff;
+                --bg-secondary: #f6f8fa;
+                --bg-tertiary: #eaeef2;
+                --border-color: #d0d7de;
+                --text-primary: #1f2328;
+                --text-secondary: #656d76;
+                --text-link: #0969da;
+                --accent-blue: #0969da;
+                --accent-green: #1a7f37;
+                --accent-orange: #9a6700;
+                --accent-purple: #8250df;
+                --accent-red: #cf222e;
+                --accent-cyan: #0550ae;
+                --code-bg: #f6f8fa;
+                --table-header-bg: #f6f8fa;
+                --table-row-hover: #f6f8fa;
+                --scrollbar-thumb: #d0d7de;
+                --scrollbar-track: #ffffff;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--scrollbar-track);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--scrollbar-thumb);
+            border-radius: 4px;
+        }
+
+        .layout {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 280px;
+            min-width: 280px;
+            background-color: var(--bg-secondary);
+            border-right: 1px solid var(--border-color);
+            padding: 24px 16px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            overflow-y: auto;
+            z-index: 100;
+        }
+
+        .sidebar-header {
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 16px;
+        }
+
+        .sidebar-header h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .sidebar-header .subtitle {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+        }
+
+        .sidebar nav > ul > li {
+            margin-bottom: 4px;
+        }
+
+        .sidebar nav a {
+            display: block;
+            padding: 6px 12px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 6px;
+            transition: all 0.15s ease;
+        }
+
+        .sidebar nav a:hover,
+        .sidebar nav a.active {
+            color: var(--text-primary);
+            background-color: var(--bg-tertiary);
+        }
+
+        .sidebar nav .nav-section {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            padding: 16px 12px 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .sidebar nav ul ul {
+            padding-left: 12px;
+        }
+
+        .sidebar nav ul ul a {
+            font-size: 13px;
+            padding: 4px 12px;
+        }
+
+        .content {
+            flex: 1;
+            margin-left: 280px;
+            padding: 40px 48px;
+            max-width: 1200px;
+        }
+
+        .page-header {
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 32px;
+        }
+
+        .page-header h1 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .page-header .tagline {
+            font-size: 18px;
+            color: var(--text-secondary);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 6px;
+        }
+        .badge-blue { background: rgba(31,111,235,0.15); color: var(--accent-blue); }
+        .badge-green { background: rgba(35,134,54,0.15); color: var(--accent-green); }
+        .badge-orange { background: rgba(210,153,34,0.15); color: var(--accent-orange); }
+        .badge-purple { background: rgba(137,87,229,0.15); color: var(--accent-purple); }
+        .badge-red { background: rgba(218,54,51,0.15); color: var(--accent-red); }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 700;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+            margin-top: 48px;
+            margin-bottom: 16px;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 32px;
+            margin-bottom: 12px;
+        }
+
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 24px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            margin-bottom: 12px;
+        }
+
+        a {
+            color: var(--text-link);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ul, ol {
+            margin-bottom: 12px;
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 4px;
+        }
+
+        code {
+            background-color: var(--code-bg);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+            font-size: 85%;
+            border: 1px solid var(--border-color);
+        }
+
+        pre {
+            background-color: var(--code-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+            overflow-x: auto;
+            margin-bottom: 16px;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            border: none;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th {
+            background-color: var(--table-header-bg);
+            font-weight: 600;
+            text-align: left;
+            padding: 10px 14px;
+            border-bottom: 2px solid var(--border-color);
+            font-size: 14px;
+        }
+
+        td {
+            padding: 8px 14px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 14px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background-color: var(--table-row-hover);
+        }
+
+        .arch-diagram {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 24px;
+            overflow-x: auto;
+        }
+
+        .arch-diagram pre {
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+            font-size: 13px;
+            line-height: 1.4;
+            color: var(--text-primary);
+        }
+
+        .arch-diagram pre code {
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        .info-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+
+        .info-card h4 {
+            margin-top: 0;
+            color: var(--accent-blue);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .feature-item {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .feature-item h4 {
+            margin-top: 0;
+            font-size: 15px;
+        }
+
+        .feature-item p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+
+        .flow-diagram {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+
+        .section-anchor {
+            scroll-margin-top: 20px;
+        }
+
+        .toc-back-link {
+            display: inline-block;
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .toc-back-link:hover {
+            color: var(--text-link);
+        }
+
+        @media (max-width: 1024px) {
+            .sidebar {
+                display: none;
+            }
+            .content {
+                margin-left: 0;
+                padding: 24px;
+            }
+        }
+
+        .collapsible {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .collapsible::before {
+            content: '▸ ';
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+
+        .collapsible.open::before {
+            content: '▾ ';
+        }
+
+        .collapsible-content {
+            display: none;
+        }
+
+        .collapsible-content.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="layout">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>VK-GL-CTS</h2>
+            <div class="subtitle">Code Wiki 文档</div>
+        </div>
+        <nav>
+            <div class="nav-section">概览</div>
+            <ul>
+                <li><a href="#overview">项目概述</a></li>
+                <li><a href="#architecture">整体架构</a></li>
+                <li><a href="#directory">目录结构</a></li>
+            </ul>
+            <div class="nav-section">核心框架</div>
+            <ul>
+                <li><a href="#delibs">delibs 基础库</a></li>
+                <li><a href="#tcutil">common (tcutil)</a></li>
+                <li><a href="#glutil">opengl (glutil)</a></li>
+                <li><a href="#eglutil">egl (eglutil)</a></li>
+                <li><a href="#refrenderer">参考渲染器</a></li>
+                <li><a href="#randomshaders">随机着色器</a></li>
+                <li><a href="#qphelper">qphelper</a></li>
+                <li><a href="#xexml">xexml</a></li>
+                <li><a href="#platform">平台抽象层</a></li>
+            </ul>
+            <div class="nav-section">测试模块</div>
+            <ul>
+                <li><a href="#module-egl">EGL 测试</a></li>
+                <li><a href="#module-gles">GLES 测试</a></li>
+                <li><a href="#module-glshared">GL 共享测试</a></li>
+                <li><a href="#module-internal">内部测试</a></li>
+            </ul>
+            <div class="nav-section">扩展 CTS</div>
+            <ul>
+                <li><a href="#vulkancts">Vulkan CTS</a></li>
+                <li><a href="#openglcts">OpenGL CTS</a></li>
+            </ul>
+            <div class="nav-section">执行与通信</div>
+            <ul>
+                <li><a href="#executor">Executor</a></li>
+                <li><a href="#execserver">ExecServer</a></li>
+            </ul>
+            <div class="nav-section">参考信息</div>
+            <ul>
+                <li><a href="#dependencies">外部依赖</a></li>
+                <li><a href="#build">构建与运行</a></li>
+                <li><a href="#depgraph">依赖关系</a></li>
+                <li><a href="#flow">执行流程</a></li>
+                <li><a href="#scripts">辅助脚本</a></li>
+                <li><a href="#naming">命名约定</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="content">
+        <div class="page-header" id="overview">
+            <h1>VK-GL-CTS Code Wiki</h1>
+            <p class="tagline">Khronos 图形 API 一致性测试套件完整技术文档</p>
+            <div style="margin-top: 12px;">
+                <span class="badge badge-blue">Vulkan</span>
+                <span class="badge badge-green">OpenGL</span>
+                <span class="badge badge-orange">OpenGL ES</span>
+                <span class="badge badge-purple">EGL</span>
+                <span class="badge badge-red">Vulkan SC</span>
+            </div>
+        </div>
+
+        <h2 id="overview-detail">1. 项目概述</h2>
+        <p><strong>VK-GL-CTS</strong>（VK-GL Conformance Test Suite）是 Khronos 组织维护的图形 API 一致性测试套件，起源于 dEQP（drawElements Quality Program）。该项目用于验证图形驱动实现是否符合 Vulkan、OpenGL、OpenGL ES、EGL 等 API 规范。</p>
+
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h4>🎮 多 API 支持</h4>
+                <p>覆盖 Vulkan、Vulkan SC、OpenGL、OpenGL ES 2.0/3.0/3.1/3.2、EGL</p>
+            </div>
+            <div class="feature-item">
+                <h4>🖥️ 跨平台</h4>
+                <p>支持 Windows、Linux、macOS、Android、iOS、Fuchsia、QNX 等</p>
+            </div>
+            <div class="feature-item">
+                <h4>🔧 可扩展架构</h4>
+                <p>模块化设计，便于添加新 API 测试和自定义测试用例</p>
+            </div>
+            <div class="feature-item">
+                <h4>🌐 远程执行</h4>
+                <p>通过 Executor/ExecServer 进行远程分布式测试</p>
+            </div>
+            <div class="feature-item">
+                <h4>✅ 参考渲染器</h4>
+                <p>内置软件参考渲染器用于验证 GPU 渲染结果正确性</p>
+            </div>
+            <div class="feature-item">
+                <h4>🎲 模糊测试</h4>
+                <p>随机着色器生成器用于压力测试和模糊测试</p>
+            </div>
+        </div>
+
+        <h3>技术栈</h3>
+        <table>
+            <thead><tr><th>类别</th><th>技术</th></tr></thead>
+            <tbody>
+                <tr><td>主要语言</td><td>C++ (C++11/14)、C</td></tr>
+                <tr><td>构建系统</td><td>CMake (≥ 3.20.0)</td></tr>
+                <tr><td>脚本语言</td><td>Python 3</td></tr>
+                <tr><td>着色器编译</td><td>glslang / SPIR-V Tools</td></tr>
+                <tr><td>图像处理</td><td>libpng</td></tr>
+                <tr><td>数据压缩</td><td>zlib</td></tr>
+                <tr><td>测试描述</td><td>Amber</td></tr>
+            </tbody>
+        </table>
+
+        <h2 id="architecture">2. 项目整体架构</h2>
+        <p>VK-GL-CTS 采用分层架构设计，自底向上分为以下层次：</p>
+
+        <div class="arch-diagram">
+            <pre><code>┌─────────────────────────────────────────────────────────────────────┐
+│                        测试模块层 (Modules)                         │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌───────────┐ ┌─────────┐ │
+│  │ EGL Tests│ │GLES2 Tests│ │GLES3 Tests│ │Vulkan Tests│ │GL CTS   │ │
+│  └──────────┘ └──────────┘ └──────────┘ └───────────┘ └─────────┘ │
+├─────────────────────────────────────────────────────────────────────┤
+│                       测试框架层 (Framework)                        │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌─────────┐ │
+│  │ tcutil   │ │ glutil   │ │ eglutil  │ │ vkutil   │ │Platform │ │
+│  │ (common) │ │ (opengl) │ │  (egl)   │ │ (vulkan) │ │  Layer  │ │
+│  └──────────┘ └──────────┘ └──────────┘ └──────────┘ └─────────┘ │
+├─────────────────────────────────────────────────────────────────────┤
+│                      基础库层 (delibs)                              │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌─────────┐ │
+│  │  debase  │ │  decpp   │ │ depool   │ │ dethread │ │ deutil  │ │
+│  └──────────┘ └──────────┘ └──────────┘ └──────────┘ └─────────┘ │
+├─────────────────────────────────────────────────────────────────────┤
+│                     执行与通信层 (Executor/ExecServer)              │
+│  ┌──────────────────────┐    ┌──────────────────────────────────┐  │
+│  │   BatchExecutor      │◄──►│      ExecutionServer             │  │
+│  │   CommLink/TcpIpLink │    │   TcpServer/TestDriver           │  │
+│  └──────────────────────┘    └──────────────────────────────────┘  │
+├─────────────────────────────────────────────────────────────────────┤
+│                       外部依赖 (External)                           │
+│  glslang | SPIR-V Tools | libpng | zlib | Amber | jsoncpp          │
+└─────────────────────────────────────────────────────────────────────┘</code></pre>
+        </div>
+
+        <h2 id="directory">3. 目录结构总览</h2>
+        <div class="arch-diagram">
+            <pre><code>VK-GL-CTS/
+├── android/                  # Android 构建配置
+├── doc/                      # 文档
+├── execserver/               # 执行服务器
+├── executor/                 # 执行器框架
+├── external/                 # 外部依赖与扩展测试套件
+│   ├── amber/                #   Amber 测试框架
+│   ├── glslang/              #   GLSL/SPIR-V 编译器
+│   ├── jsoncpp/              #   JSON 解析库
+│   ├── libpng/               #   PNG 图像库
+│   ├── openglcts/            #   OpenGL/OpenGL ES CTS
+│   ├── spirv-tools/          #   SPIR-V 工具
+│   ├── vulkancts/            #   Vulkan CTS
+│   ├── vulkan-validationlayers/ # Vulkan 验证层
+│   └── zlib/                 #   zlib 压缩库
+├── framework/                # 核心测试框架
+│   ├── common/               #   通用测试工具 (tcutil)
+│   ├── delibs/               #   基础库
+│   ├── egl/                  #   EGL 工具库 (eglutil)
+│   ├── opengl/               #   OpenGL 工具库 (glutil)
+│   ├── platform/             #   平台抽象层
+│   ├── qphelper/             #   C 辅助库
+│   ├── randomshaders/        #   随机着色器生成器
+│   ├── referencerenderer/    #   参考渲染器
+│   └── xexml/                #   XML 解析库
+├── modules/                  # 内置测试模块
+│   ├── egl/                  #   EGL 测试
+│   ├── gles2/                #   OpenGL ES 2.0 测试
+│   ├── gles3/                #   OpenGL ES 3.0 测试
+│   ├── gles31/               #   OpenGL ES 3.1 测试
+│   ├── glshared/             #   GL 共享测试工具
+│   └── internal/             #   内部框架测试
+├── scripts/                  # 辅助脚本
+├── CMakeLists.txt            # 顶层 CMake 构建文件
+└── README.md                 # 项目说明</code></pre>
+        </div>
+
+        <h2 id="delibs">4. 核心框架层 — delibs 基础库</h2>
+        <p>delibs 是整个项目的基础库集合，提供跨平台的底层功能，分为 C 语言接口（debase 等）和 C++ 封装（decpp）两个层次。</p>
+
+        <h3>4.1 debase — C 基础库</h3>
+        <table>
+            <thead><tr><th>文件</th><th>功能</th></tr></thead>
+            <tbody>
+                <tr><td><code>deDefs.h</code></td><td>基础类型定义、宏、编译器抽象（DE_OS/DE_CPU 系列宏）</td></tr>
+                <tr><td><code>deMath.h/c</code></td><td>数学工具函数（最大/最小值、对齐、浮点运算）</td></tr>
+                <tr><td><code>deMemory.h/c</code></td><td>内存管理（分配、释放、对齐分配）</td></tr>
+                <tr><td><code>deString.h/c</code></td><td>字符串操作工具</td></tr>
+                <tr><td><code>deRandom.h/c</code></td><td>随机数生成器</td></tr>
+                <tr><td><code>deSha1.h/c</code></td><td>SHA-1 哈希计算</td></tr>
+                <tr><td><code>deFloat16.h/c</code></td><td>16 位浮点数转换</td></tr>
+                <tr><td><code>deInt32.h/c</code></td><td>32 位整数运算工具</td></tr>
+            </tbody>
+        </table>
+
+        <h3>4.2 decpp — C++ 基础库</h3>
+        <table>
+            <thead><tr><th>文件</th><th>功能</th></tr></thead>
+            <tbody>
+                <tr><td><code>deDefs.hpp</code></td><td>C++ 基础定义和异常类</td></tr>
+                <tr><td><code>deUniquePtr.hpp</code></td><td>唯一指针（类似 std::unique_ptr）</td></tr>
+                <tr><td><code>deSharedPtr.hpp</code></td><td>共享指针（类似 std::shared_ptr）</td></tr>
+                <tr><td><code>deThread.hpp</code></td><td>C++ 线程封装</td></tr>
+                <tr><td><code>deMutex.hpp</code></td><td>C++ 互斥锁封装</td></tr>
+                <tr><td><code>deSemaphore.hpp</code></td><td>C++ 信号量封装</td></tr>
+                <tr><td><code>deSocket.hpp</code></td><td>C++ 套接字封装</td></tr>
+                <tr><td><code>deCommandLine.hpp</code></td><td>C++ 命令行解析</td></tr>
+                <tr><td><code>deProcess.hpp</code></td><td>C++ 进程管理</td></tr>
+                <tr><td><code>deDynamicLibrary.hpp</code></td><td>C++ 动态库加载</td></tr>
+                <tr><td><code>deFilePath.hpp</code></td><td>C++ 文件路径操作</td></tr>
+                <tr><td><code>deDirectoryIterator.hpp</code></td><td>C++ 目录遍历</td></tr>
+                <tr><td><code>deIOStream.hpp</code></td><td>C++ I/O 流工具</td></tr>
+                <tr><td><code>deRingBuffer.hpp</code></td><td>C++ 环形缓冲区</td></tr>
+                <tr><td><code>deThreadPool.hpp</code></td><td>C++ 线程池</td></tr>
+                <tr><td><code>deRandom.hpp</code></td><td>C++ 随机数工具</td></tr>
+                <tr><td><code>deSTLUtil.hpp</code></td><td>STL 辅助工具</td></tr>
+                <tr><td><code>deStringUtil.hpp</code></td><td>字符串工具</td></tr>
+            </tbody>
+        </table>
+
+        <h3>4.3 depool — 内存池库</h3>
+        <table>
+            <thead><tr><th>文件</th><th>功能</th></tr></thead>
+            <tbody>
+                <tr><td><code>deMemPool.h/c</code></td><td>内存池管理器</td></tr>
+                <tr><td><code>dePoolArray.h/c</code></td><td>池化动态数组</td></tr>
+                <tr><td><code>dePoolHash.h/c</code></td><td>池化哈希表</td></tr>
+                <tr><td><code>dePoolHashSet.h/c</code></td><td>池化哈希集合</td></tr>
+                <tr><td><code>dePoolHeap.h/c</code></td><td>池化堆</td></tr>
+                <tr><td><code>dePoolSet.h/c</code></td><td>池化有序集合</td></tr>
+                <tr><td><code>dePoolStringBuilder.h/c</code></td><td>池化字符串构建器</td></tr>
+            </tbody>
+        </table>
+
+        <h3>4.4 其他 delibs 子模块</h3>
+        <table>
+            <thead><tr><th>模块</th><th>路径</th><th>功能</th></tr></thead>
+            <tbody>
+                <tr><td>dethread</td><td><code>delibs/dethread/</code></td><td>线程与同步原语（原子操作、互斥锁、信号量、线程、线程局部存储、自旋屏障）</td></tr>
+                <tr><td>deutil</td><td><code>delibs/deutil/</code></td><td>实用工具（时钟、命令行、动态库、文件、进程、套接字、定时器）</td></tr>
+                <tr><td>deimage</td><td><code>delibs/deimage/</code></td><td>图像处理（基础图像结构、ARGB 格式、Targa 读写）</td></tr>
+                <tr><td>destream</td><td><code>delibs/destream/</code></td><td>流操作（I/O 流、文件流、环形缓冲区、线程安全流）</td></tr>
+            </tbody>
+        </table>
+
+        <h2 id="tcutil">4.5 common — 测试通用模块（tcutil）</h2>
+        <p>tcutil 是测试框架的核心，提供测试用例管理、执行引擎、命令行处理、日志记录等核心功能。</p>
+
+        <table>
+            <thead><tr><th>文件</th><th>关键类/函数</th><th>说明</th></tr></thead>
+            <tbody>
+                <tr><td><code>tcuApp.hpp/cpp</code></td><td><code>tcu::App</code></td><td>应用程序入口类，管理测试执行主循环</td></tr>
+                <tr><td><code>tcuTestCase.hpp/cpp</code></td><td><code>tcu::TestCase</code></td><td>测试用例基类，所有具体测试用例的父类</td></tr>
+                <tr><td></td><td><code>tcu::TestNode</code></td><td>测试树节点基类</td></tr>
+                <tr><td></td><td><code>tcu::TestCaseGroup</code></td><td>测试用例组，组织测试层次结构</td></tr>
+                <tr><td><code>tcuTestPackage.hpp/cpp</code></td><td><code>tcu::TestPackage</code></td><td>测试包类，组织一组相关测试用例</td></tr>
+                <tr><td><code>tcuTestContext.hpp/cpp</code></td><td><code>tcu::TestContext</code></td><td>测试上下文，提供共享资源</td></tr>
+                <tr><td><code>tcuTestSessionExecutor.hpp/cpp</code></td><td><code>tcu::TestSessionExecutor</code></td><td>测试会话执行器</td></tr>
+                <tr><td><code>tcuCommandLine.hpp/cpp</code></td><td><code>tcu::CommandLine</code></td><td>命令行参数解析器</td></tr>
+                <tr><td><code>tcuTestLog.hpp/cpp</code></td><td><code>tcu::TestLog</code></td><td>测试日志记录器</td></tr>
+                <tr><td><code>tcuPlatform.hpp/cpp</code></td><td><code>tcu::Platform</code></td><td>平台抽象基类</td></tr>
+                <tr><td><code>tcuResource.hpp/cpp</code></td><td><code>tcu::DirArchive</code></td><td>资源归档访问</td></tr>
+                <tr><td><code>tcuTexture.hpp/cpp</code></td><td><code>tcu::TextureFormat</code></td><td>纹理格式和像素缓冲区</td></tr>
+                <tr><td><code>tcuImageCompare.hpp/cpp</code></td><td><code>tcu::computeImageCompareResult</code></td><td>图像比较算法</td></tr>
+                <tr><td><code>tcuFloat.hpp/cpp</code></td><td><code>tcu::Float</code></td><td>浮点数操作工具</td></tr>
+                <tr><td><code>tcuInterval.hpp/cpp</code></td><td><code>tcu::Interval</code></td><td>区间算术</td></tr>
+                <tr><td><code>tcuMatrix.hpp/cpp</code></td><td><code>tcu::Matrix</code></td><td>矩阵运算</td></tr>
+                <tr><td><code>tcuVector.hpp</code></td><td><code>tcu::Vector</code></td><td>向量类型</td></tr>
+                <tr><td><code>tcuStringTemplate.hpp/cpp</code></td><td><code>tcu::StringTemplate</code></td><td>字符串模板引擎</td></tr>
+                <tr><td><code>tcuResultCollector.hpp/cpp</code></td><td><code>tcu::ResultCollector</code></td><td>测试结果收集器</td></tr>
+                <tr><td><code>tcuCompressedTexture.hpp/cpp</code></td><td><code>tcu::CompressedTexture</code></td><td>压缩纹理处理</td></tr>
+                <tr><td><code>tcuSurface.hpp/cpp</code></td><td><code>tcu::Surface</code></td><td>像素表面（渲染结果捕获）</td></tr>
+                <tr><td><code>tcuTestHierarchyIterator.hpp/cpp</code></td><td><code>tcu::TestHierarchyIterator</code></td><td>测试层次结构迭代器</td></tr>
+            </tbody>
+        </table>
+
+        <h3>测试执行主循环（tcuMain.cpp）</h3>
+        <pre><code>int main(int argc, char **argv) {
+    tcu::CommandLine cmdLine(argc, argv);        // 解析命令行
+    tcu::DirArchive archive(cmdLine.getArchiveDir());  // 创建资源归档
+    tcu::TestLog log(cmdLine.getLogFileName(), ...);    // 创建日志
+    de::UniquePtr&lt;tcu::Platform&gt; platform(createPlatform()); // 创建平台
+    de::UniquePtr&lt;tcu::App&gt; app(new tcu::App(*platform, archive, log, cmdLine));
+
+    for (;;) {
+        if (!app-&gt;iterate()) break;  // 迭代执行测试
+    }
+}</code></pre>
+
+        <h2 id="glutil">4.6 opengl — OpenGL 工具模块（glutil）</h2>
+        <table>
+            <thead><tr><th>文件</th><th>关键类/函数</th><th>说明</th></tr></thead>
+            <tbody>
+                <tr><td><code>gluRenderContext.hpp</code></td><td><code>glu::RenderContext</code></td><td>渲染上下文抽象基类</td></tr>
+                <tr><td><code>gluContextFactory.hpp</code></td><td><code>glu::ContextFactory</code></td><td>上下文工厂</td></tr>
+                <tr><td><code>gluShaderProgram.hpp</code></td><td><code>glu::ShaderProgram</code></td><td>着色器程序管理</td></tr>
+                <tr><td><code>gluShaderLibrary.hpp</code></td><td><code>glu::ShaderLibrary</code></td><td>着色器库（XML 格式）</td></tr>
+                <tr><td><code>gluDrawUtil.hpp</code></td><td><code>glu::DrawUtil</code></td><td>绘制工具</td></tr>
+                <tr><td><code>gluTexture.hpp</code></td><td><code>glu::Texture</code></td><td>纹理创建和管理</td></tr>
+                <tr><td><code>gluObjectWrapper.hpp</code></td><td><code>glu::ObjectWrapper</code></td><td>GL 对象 RAII 封装</td></tr>
+                <tr><td><code>gluFboRenderContext.hpp</code></td><td><code>glu::FboRenderContext</code></td><td>FBO 渲染上下文</td></tr>
+                <tr><td><code>gluCallLogWrapper.hpp</code></td><td><code>glu::CallLogWrapper</code></td><td>GL API 调用日志包装器</td></tr>
+                <tr><td><code>gluVarType.hpp</code></td><td><code>glu::VarType</code></td><td>变量类型系统</td></tr>
+                <tr><td><code>gluStrUtil.hpp</code></td><td><code>glu::StrUtil</code></td><td>GL 枚举/函数名字符串工具</td></tr>
+                <tr><td><code>gluStateReset.hpp</code></td><td><code>glu::StateReset</code></td><td>GL 状态重置</td></tr>
+            </tbody>
+        </table>
+
+        <h2 id="eglutil">4.7 egl — EGL 工具模块（eglutil）</h2>
+        <table>
+            <thead><tr><th>文件</th><th>关键类/函数</th><th>说明</th></tr></thead>
+            <tbody>
+                <tr><td><code>egluPlatform.hpp</code></td><td><code>eglu::Platform</code></td><td>EGL 平台接口</td></tr>
+                <tr><td><code>egluConfigFilter.hpp</code></td><td><code>eglu::ConfigFilter</code></td><td>EGL 配置过滤器</td></tr>
+                <tr><td><code>egluNativeDisplay.hpp</code></td><td><code>eglu::NativeDisplay</code></td><td>原生显示抽象</td></tr>
+                <tr><td><code>egluNativeWindow.hpp</code></td><td><code>eglu::NativeWindow</code></td><td>原生窗口抽象</td></tr>
+                <tr><td><code>egluGLContextFactory.hpp</code></td><td><code>eglu::GLContextFactory</code></td><td>GL 上下文工厂（基于 EGL）</td></tr>
+                <tr><td><code>egluCallLogWrapper.hpp</code></td><td><code>eglu::CallLogWrapper</code></td><td>EGL API 调用日志包装器</td></tr>
+                <tr><td><code>egluUnique.hpp</code></td><td><code>eglu::Unique</code></td><td>EGL 对象 RAII 封装</td></tr>
+            </tbody>
+        </table>
+
+        <h2 id="refrenderer">4.8 referencerenderer — 参考渲染器</h2>
+        <p>软件实现的参考渲染器，用于验证 GPU 渲染结果的正确性。</p>
+        <table>
+            <thead><tr><th>文件</th><th>关键类</th><th>说明</th></tr></thead>
+            <tbody>
+                <tr><td><code>rrRenderer.hpp/cpp</code></td><td><code>rr::Renderer</code></td><td>参考渲染器主类，执行完整渲染管线</td></tr>
+                <tr><td><code>rrRasterizer.hpp/cpp</code></td><td><code>rr::Rasterizer</code></td><td>软件光栅化器</td></tr>
+                <tr><td><code>rrShaders.hpp/cpp</code></td><td><code>rr::Shader</code></td><td>着色器执行接口</td></tr>
+                <tr><td><code>rrFragmentOperations.hpp/cpp</code></td><td><code>rr::FragmentOperations</code></td><td>片段操作（深度/模板/混合）</td></tr>
+                <tr><td><code>rrPrimitiveAssembler.hpp</code></td><td><code>rr::PrimitiveAssembler</code></td><td>图元装配器</td></tr>
+                <tr><td><code>rrVertexAttrib.hpp/cpp</code></td><td><code>rr::VertexAttrib</code></td><td>顶点属性</td></tr>
+                <tr><td><code>rrRenderState.hpp</code></td><td><code>rr::RenderState</code></td><td>渲染状态</td></tr>
+            </tbody>
+        </table>
+
+        <h2 id="randomshaders">4.9 randomshaders — 随机着色器生成器</h2>
+        <p>自动生成随机着色器程序用于压力测试和模糊测试。</p>
+        <table>
+            <thead><tr><th>文件</th><th>关键类</th><th>说明</th></tr></thead>
+            <tbody>
+                <tr><td><code>rsgProgramGenerator.hpp</code></td><td><code>rsg::ProgramGenerator</code></td><td>着色器程序生成器</td></tr>
+                <tr><td><code>rsgShaderGenerator.hpp</code></td><td><code>rsg::ShaderGenerator</code></td><td>着色器生成器</td></tr>
+                <tr><td><code>rsgExpressionGenerator.hpp</code></td><td><code>rsg::ExpressionGenerator</code></td><td>表达式生成器</td></tr>
+                <tr><td><code>rsgProgramExecutor.hpp</code></td><td><code>rsg::ProgramExecutor</code></td><td>着色器程序执行器</td></tr>
+                <tr><td><code>rsgVariableManager.hpp</code></td><td><code>rsg::VariableManager</code></td><td>变量管理器</td></tr>
+            </tbody>
+        </table>
+
+        <h2 id="qphelper">4.10 qphelper — C 辅助库</h2>
+        <table>
+            <thead><tr><th>文件</th><th>关键函数</th><th>说明</th></tr></thead>
+            <tbody>
+                <tr><td><code>qpTestLog.h/c</code></td><td><code>qpTestLog_create/write</code></td><td>测试日志 C 接口（底层实现）</td></tr>
+                <tr><td><code>qpCrashHandler.h/c</code></td><td><code>qpCrashHandler_init</code></td><td>崩溃信号处理器</td></tr>
+                <tr><td><code>qpWatchDog.h/c</code></td><td><code>qpWatchDog_create/touch</code></td><td>看门狗定时器（检测挂起）</td></tr>
+                <tr><td><code>qpDebugOut.h/c</code></td><td><code>qpPrint/qpPrintf</code></td><td>调试输出</td></tr>
+                <tr><td><code>qpXmlWriter.h/c</code></td><td><code>qpXmlWriter_create</code></td><td>XML 写入器</td></tr>
+                <tr><td><code>qpInfo.h/c</code></td><td><code>qpGetReleaseId</code></td><td>版本和构建信息</td></tr>
+            </tbody>
+        </table>
+
+        <h2 id="xexml">4.11 xexml — XML 解析库</h2>
+        <table>
+            <thead><tr><th>文件</th><th>关键类</th><th>说明</th></tr></thead>
+            <tbody>
+                <tr><td><code>xeXMLParser.hpp/cpp</code></td><td><code>xe::XMLParser</code></td><td>轻量级 XML 解析器</td></tr>
+                <tr><td><code>xeDefs.hpp/cpp</code></td><td><code>xe::Defs</code></td><td>XML 解析器基础定义</td></tr>
+            </tbody>
+        </table>
+
+        <h2 id="platform">4.12 platform — 平台抽象层</h2>
+        <table>
+            <thead><tr><th>目录</th><th>平台</th><th>关键文件</th></tr></thead>
+            <tbody>
+                <tr><td><code>android/</code></td><td>Android</td><td>tcuAndroidPlatform、tcuAndroidNativeActivity、tcuAndroidJNI</td></tr>
+                <tr><td><code>lnx/</code></td><td>Linux</td><td>tcuLnxPlatform、tcuLnxVulkanPlatform、X11/Wayland 子目录</td></tr>
+                <tr><td><code>win32/</code></td><td>Windows</td><td>tcuWin32Platform、tcuWin32VulkanPlatform、tcuWGL</td></tr>
+                <tr><td><code>osx/</code></td><td>macOS</td><td>tcuOSXPlatform、tcuOSXVulkanPlatform</td></tr>
+                <tr><td><code>ios/</code></td><td>iOS</td><td>tcuIOSPlatform、tcuEAGLView</td></tr>
+                <tr><td><code>fuchsia/</code></td><td>Fuchsia</td><td>tcuFuchsiaPlatform</td></tr>
+                <tr><td><code>qnx/</code></td><td>QNX</td><td>tcuQnxScreenPlatform</td></tr>
+                <tr><td><code>raspi/</code></td><td>Raspberry Pi</td><td>tcuRaspiPlatform</td></tr>
+                <tr><td><code>surfaceless/</code></td><td>无窗口 Linux</td><td>tcuSurfacelessPlatform</td></tr>
+                <tr><td><code>null/</code></td><td>空平台（测试用）</td><td>tcuNullPlatform</td></tr>
+            </tbody>
+        </table>
+
+        <h2 id="module-egl">5. 测试模块层 — EGL 测试</h2>
+        <p>路径：<code>modules/egl/</code>，前缀 <code>tegl</code></p>
+        <table>
+            <thead><tr><th>文件</th><th>说明</th></tr></thead>
+            <tbody>
+                <tr><td><code>teglTestPackage.hpp/cpp</code></td><td>EGL 测试包入口</td></tr>
+                <tr><td><code>teglApiCase.hpp/cpp</code></td><td>EGL API 测试基类</td></tr>
+                <tr><td><code>teglChooseConfigTests.hpp/cpp</code></td><td>配置选择测试</td></tr>
+                <tr><td><code>teglCreateContextTests.hpp/cpp</code></td><td>上下文创建测试</td></tr>
+                <tr><td><code>teglCreateSurfaceTests.hpp/cpp</code></td><td>Surface 创建测试</td></tr>
+                <tr><td><code>teglSwapBuffersTests.hpp/cpp</code></td><td>缓冲区交换测试</td></tr>
+                <tr><td><code>teglSyncTests.hpp/cpp</code></td><td>同步对象测试</td></tr>
+                <tr><td><code>teglMultiContextTests.hpp/cpp</code></td><td>多上下文测试</td></tr>
+                <tr><td><code>teglMultiThreadTests.hpp/cpp</code></td><td>多线程测试</td></tr>
+                <tr><td><code>teglRobustnessTests.hpp/cpp</code></td><td>鲁棒性测试</td></tr>
+                <tr><td><code>teglNegativeApiTests.hpp/cpp</code></td><td>负面 API 测试</td></tr>
+                <tr><td><code>teglPartialUpdateTests.hpp/cpp</code></td><td>局部更新测试</td></tr>
+                <tr><td><code>teglWideColorTests.hpp/cpp</code></td><td>广色域测试</td></tr>
+                <tr><td><code>teglMemoryStressTests.hpp/cpp</code></td><td>内存压力测试</td></tr>
+            </tbody>
+        </table>
+
+        <h2 id="module-gles">5.1 OpenGL ES 测试模块</h2>
+        <table>
+            <thead><tr><th>模块</th><th>路径</th><th>前缀</th><th>说明</th></tr></thead>
+            <tbody>
+                <tr><td>GLES2</td><td><code>modules/gles2/</code></td><td><code>tes2</code></td><td>OpenGL ES 2.0 测试（能力/信息测试）</td></tr>
+                <tr><td>GLES3</td><td><code>modules/gles3/</code></td><td><code>tes3</code></td><td>OpenGL ES 3.0 测试（功能+性能）</td></tr>
+                <tr><td>GLES31</td><td><code>modules/gles31/</code></td><td><code>tes31</code></td><td>OpenGL ES 3.1 测试</td></tr>
+            </tbody>
+        </table>
+
+        <h3>GLES3 功能测试（es3f 前缀）</h3>
+        <table>
+            <thead><tr><th>测试文件</th><th>说明</th></tr></thead>
+            <tbody>
+                <tr><td>es3fFboApiTests</td><td>FBO API 测试</td></tr>
+                <tr><td>es3fTextureFilteringTests</td><td>纹理过滤测试</td></tr>
+                <tr><td>es3fShaderLoopTests</td><td>着色器循环测试</td></tr>
+                <tr><td>es3fShaderOperatorTests</td><td>着色器运算符测试</td></tr>
+                <tr><td>es3fBlendTests</td><td>混合测试</td></tr>
+                <tr><td>es3fDepthStencilTests</td><td>深度/模板测试</td></tr>
+                <tr><td>es3fUniformBlockTests</td><td>Uniform 块测试</td></tr>
+                <tr><td>es3fInstancedRenderingTests</td><td>实例化渲染测试</td></tr>
+            </tbody>
+        </table>
+
+        <h2 id="module-glshared">5.2 GL 共享测试模块</h2>
+        <p>路径：<code>modules/glshared/</code>，前缀 <code>gls</code></p>
+        <table>
+            <thead><tr><th>文件</th><th>说明</th></tr></thead>
+            <tbody>
+                <tr><td><code>glsShaderLibrary.hpp/cpp</code></td><td>着色器库解析器</td></tr>
+                <tr><td><code>glsShaderExecUtil.hpp/cpp</code></td><td>着色器执行工具</td></tr>
+                <tr><td><code>glsBuiltinPrecisionTests.hpp/cpp</code></td><td>内建函数精度测试</td></tr>
+                <tr><td><code>glsBufferTestUtil.hpp/cpp</code></td><td>缓冲区测试工具</td></tr>
+                <tr><td><code>glsFboUtil.hpp/cpp</code></td><td>FBO 工具</td></tr>
+                <tr><td><code>glsTextureTestUtil.hpp/cpp</code></td><td>纹理测试工具</td></tr>
+                <tr><td><code>glsVertexArrayTests.hpp/cpp</code></td><td>顶点数组测试</td></tr>
+                <tr><td><code>glsUniformBlockCase.hpp/cpp</code></td><td>Uniform 块测试用例</td></tr>
+                <tr><td><code>glsDrawTest.hpp/cpp</code></td><td>绘制测试</td></tr>
+                <tr><td><code>glsLifetimeTests.hpp/cpp</code></td><td>对象生命周期测试</td></tr>
+                <tr><td><code>glsCalibration.hpp/cpp</code></td><td>性能校准工具</td></tr>
+            </tbody>
+        </table>
+
+        <h2 id="module-internal">5.3 内部测试模块</h2>
+        <p>路径：<code>modules/internal/</code>，前缀 <code>dit</code>，用于验证框架自身正确性。</p>
+        <table>
+            <thead><tr><th>文件</th><th>说明</th></tr></thead>
+            <tbody>
+                <tr><td><code>ditFrameworkTests.hpp/cpp</code></td><td>框架测试</td></tr>
+                <tr><td><code>ditImageCompareTests.hpp/cpp</code></td><td>图像比较测试</td></tr>
+                <tr><td><code>ditTextureFormatTests.hpp/cpp</code></td><td>纹理格式测试</td></tr>
+                <tr><td><code>ditAstcTests.hpp/cpp</code></td><td>ASTC 测试</td></tr>
+                <tr><td><code>ditVulkanTests.hpp/cpp</code></td><td>Vulkan 框架测试</td></tr>
+            </tbody>
+        </table>
+
+        <h2 id="vulkancts">6. Vulkan CTS</h2>
+
+        <h3>6.1 Vulkan 框架层</h3>
+        <p>路径：<code>external/vulkancts/framework/vulkan/</code>，前缀 <code>vk</code></p>
+        <table>
+            <thead><tr><th>文件</th><th>关键类</th><th>说明</th></tr></thead>
+            <tbody>
+                <tr><td><code>vkDefs.hpp</code></td><td><code>vk::Defs</code></td><td>Vulkan 基础类型定义</td></tr>
+                <tr><td><code>vkPlatform.hpp</code></td><td><code>vk::Platform</code></td><td>Vulkan 平台接口</td></tr>
+                <tr><td><code>vkDeviceUtil.hpp</code></td><td><code>vk::DeviceUtil</code></td><td>设备创建和管理</td></tr>
+                <tr><td><code>vkDeviceFeatures.hpp</code></td><td><code>vk::DeviceFeatures</code></td><td>设备特性管理</td></tr>
+                <tr><td><code>vkMemUtil.hpp</code></td><td><code>vk::Allocator</code></td><td>内存分配和管理</td></tr>
+                <tr><td><code>vkImageUtil.hpp</code></td><td><code>vk::ImageUtil</code></td><td>图像格式和操作工具</td></tr>
+                <tr><td><code>vkRef.hpp</code></td><td><code>vk::Move</code></td><td>Vulkan 对象 RAII 引用</td></tr>
+                <tr><td><code>vkBufferWithMemory.hpp</code></td><td><code>vk::BufferWithMemory</code></td><td>带内存的缓冲区</td></tr>
+                <tr><td><code>vkImageWithMemory.hpp</code></td><td><code>vk::ImageWithMemory</code></td><td>带内存的图像</td></tr>
+                <tr><td><code>vkPipelineConstructionUtil.hpp</code></td><td></td><td>管线构建工具</td></tr>
+                <tr><td><code>vkShaderProgram.hpp</code></td><td><code>vk::ShaderProgram</code></td><td>着色器程序管理</td></tr>
+                <tr><td><code>vkShaderToSpirV.hpp</code></td><td></td><td>GLSL 到 SPIR-V 编译</td></tr>
+                <tr><td><code>vkSpirVAsm.hpp</code></td><td></td><td>SPIR-V 汇编工具</td></tr>
+                <tr><td><code>vkBarrierUtil.hpp</code></td><td></td><td>屏障创建工具</td></tr>
+                <tr><td><code>vkCmdUtil.hpp</code></td><td></td><td>命令缓冲区工具</td></tr>
+                <tr><td><code>vkResourceInterface.hpp</code></td><td><code>vk::ResourceInterface</code></td><td>资源接口（支持多进程）</td></tr>
+                <tr><td><code>vkNullDriver.hpp</code></td><td><code>vk::NullDriver</code></td><td>空驱动（测试框架本身）</td></tr>
+                <tr><td><code>vkRayTracingUtil.hpp</code></td><td></td><td>光线追踪工具</td></tr>
+                <tr><td><code>vkWsiPlatform.hpp</code></td><td></td><td>窗口系统集成平台</td></tr>
+                <tr><td><code>generated/vulkan/</code></td><td></td><td>自动生成的 Vulkan API 代码</td></tr>
+            </tbody>
+        </table>
+
+        <h3>6.2 Vulkan 测试模块层</h3>
+        <p>路径：<code>external/vulkancts/modules/vulkan/</code>，前缀 <code>vkt</code></p>
+        <table>
+            <thead><tr><th>子目录</th><th>说明</th></tr></thead>
+            <tbody>
+                <tr><td><code>api/</code></td><td>API 基础功能测试（缓冲区、图像、命令、描述符、管线等）</td></tr>
+                <tr><td><code>binding_model/</code></td><td>绑定模型测试（描述符集、推送常量、动态偏移等）</td></tr>
+                <tr><td><code>clipping/</code></td><td>裁剪测试</td></tr>
+                <tr><td><code>draw/</code></td><td>绘制测试（顶点、索引、间接、实例化等）</td></tr>
+                <tr><td><code>dynamic_state/</code></td><td>动态状态测试</td></tr>
+                <tr><td><code>fragment_ops/</code></td><td>片段操作测试（深度/模板/裁剪）</td></tr>
+                <tr><td><code>fragment_shading_rate/</code></td><td>片段着色率测试</td></tr>
+                <tr><td><code>image/</code></td><td>图像测试（格式、布局、原子操作等）</td></tr>
+                <tr><td><code>memory_model/</code></td><td>内存模型测试</td></tr>
+                <tr><td><code>mesh_shader/</code></td><td>网格着色器测试</td></tr>
+                <tr><td><code>multiview/</code></td><td>多视图测试</td></tr>
+                <tr><td><code>postmortem/</code></td><td>故障后处理测试</td></tr>
+                <tr><td><code>query_pool/</code></td><td>查询池测试</td></tr>
+                <tr><td><code>ray_tracing/</code></td><td>光线追踪测试</td></tr>
+                <tr><td><code>amber/</code></td><td>Amber 测试框架集成</td></tr>
+            </tbody>
+        </table>
+
+        <h2 id="openglcts">7. OpenGL CTS</h2>
+        <p>路径：<code>external/openglcts/modules/</code></p>
+
+        <h3>7.1 通用测试模块（glc 前缀）</h3>
+        <table>
+            <thead><tr><th>文件</th><th>说明</th></tr></thead>
+            <tbody>
+                <tr><td><code>glcTestPackage.hpp/cpp</code></td><td>通用测试包基类</td></tr>
+                <tr><td><code>glcShaderLibrary.hpp/cpp</code></td><td>着色器库</td></tr>
+                <tr><td><code>glcCompressedFormatTests.hpp/cpp</code></td><td>压缩格式测试</td></tr>
+                <tr><td><code>glcRobustnessTests.hpp/cpp</code></td><td>鲁棒性测试</td></tr>
+                <tr><td><code>glcKHRDebugTests.hpp/cpp</code></td><td>KHR_debug 测试</td></tr>
+                <tr><td><code>glcUniformBlockTests.hpp/cpp</code></td><td>Uniform 块测试</td></tr>
+                <tr><td><code>meshShader/</code></td><td>网格着色器测试子模块</td></tr>
+                <tr><td><code>subgroups/</code></td><td>子组操作测试子模块</td></tr>
+            </tbody>
+        </table>
+
+        <h3>7.2 OpenGL 桌面测试模块</h3>
+        <table>
+            <thead><tr><th>文件</th><th>说明</th></tr></thead>
+            <tbody>
+                <tr><td><code>gl3cTestPackages.hpp/cpp</code></td><td>OpenGL 3.x 测试包</td></tr>
+                <tr><td><code>gl4cTestPackages.hpp/cpp</code></td><td>OpenGL 4.x 测试包</td></tr>
+                <tr><td><code>gl4cComputeShaderTests.hpp/cpp</code></td><td>计算着色器测试</td></tr>
+                <tr><td><code>gl4cDirectStateAccessTests.hpp/cpp</code></td><td>直接状态访问测试</td></tr>
+                <tr><td><code>gl4cEnhancedLayoutsTests.hpp/cpp</code></td><td>增强布局测试</td></tr>
+                <tr><td><code>gl4cSparseTextureTests.hpp/cpp</code></td><td>稀疏纹理测试</td></tr>
+                <tr><td><code>gl4cSpirvExtensionsTests.hpp/cpp</code></td><td>SPIR-V 扩展测试</td></tr>
+            </tbody>
+        </table>
+
+        <h3>7.3 OpenGL ES CTS 测试模块</h3>
+        <table>
+            <thead><tr><th>路径</th><th>前缀</th><th>说明</th></tr></thead>
+            <tbody>
+                <tr><td><code>modules/gles2/</code></td><td><code>es2c</code></td><td>OpenGL ES 2.0 CTS 测试</td></tr>
+                <tr><td><code>modules/gles3/</code></td><td><code>es3c</code></td><td>OpenGL ES 3.0 CTS 测试</td></tr>
+                <tr><td><code>modules/gles31/</code></td><td><code>es31c</code></td><td>OpenGL ES 3.1 CTS 测试</td></tr>
+                <tr><td><code>modules/gles32/</code></td><td><code>es32c</code></td><td>OpenGL ES 3.2 CTS 测试</td></tr>
+            </tbody>
+        </table>
+
+        <h3>7.4 OpenGL ES 扩展测试模块（esextc 前缀）</h3>
+        <table>
+            <thead><tr><th>子目录</th><th>说明</th></tr></thead>
+            <tbody>
+                <tr><td><code>geometry_shader/</code></td><td>几何着色器扩展测试</td></tr>
+                <tr><td><code>gpu_shader5/</code></td><td>GPU Shader 5 扩展测试</td></tr>
+                <tr><td><code>draw_buffers_indexed/</code></td><td>索引化绘制缓冲区测试</td></tr>
+                <tr><td><code>fragment_shading_rate/</code></td><td>片段着色率扩展测试</td></tr>
+                <tr><td><code>disjoint_timer_query/</code></td><td>离散计时器查询测试</td></tr>
+            </tbody>
+        </table>
+
+        <h2 id="executor">8. Executor 执行器框架</h2>
+        <p>路径：<code>executor/</code>，前缀 <code>xe</code></p>
+        <table>
+            <thead><tr><th>文件</th><th>关键类</th><th>说明</th></tr></thead>
+            <tbody>
+                <tr><td><code>xeBatchExecutor.hpp/cpp</code></td><td><code>xe::BatchExecutor</code></td><td>批量执行器，协调测试集执行</td></tr>
+                <tr><td><code>xeBatchResult.hpp/cpp</code></td><td><code>xe::BatchResult</code></td><td>批量测试结果管理</td></tr>
+                <tr><td><code>xeCommLink.hpp/cpp</code></td><td><code>xe::CommLink</code></td><td>通信链路抽象接口</td></tr>
+                <tr><td><code>xeTcpIpLink.hpp/cpp</code></td><td><code>xe::TcpIpLink</code></td><td>TCP/IP 通信链路实现</td></tr>
+                <tr><td><code>xeLocalTcpIpLink.hpp/cpp</code></td><td><code>xe::LocalTcpIpLink</code></td><td>本地 TCP/IP 通信链路</td></tr>
+                <tr><td><code>xeCallQueue.hpp/cpp</code></td><td><code>xe::CallQueue</code></td><td>线程安全调用队列</td></tr>
+                <tr><td><code>xeTestCase.hpp/cpp</code></td><td><code>xe::TestCase</code></td><td>测试用例表示</td></tr>
+                <tr><td><code>xeTestLogParser.hpp/cpp</code></td><td><code>xe::TestLogParser</code></td><td>测试日志解析</td></tr>
+                <tr><td><code>xeXMLWriter.hpp/cpp</code></td><td><code>xe::XMLWriter</code></td><td>XML 写入器</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Executor 工具</h3>
+        <table>
+            <thead><tr><th>文件</th><th>说明</th></tr></thead>
+            <tbody>
+                <tr><td><code>xeBatchResultToJUnit.cpp</code></td><td>批量结果转 JUnit XML</td></tr>
+                <tr><td><code>xeBatchResultToXml.cpp</code></td><td>批量结果转 XML</td></tr>
+                <tr><td><code>xeCommandLineExecutor.cpp</code></td><td>命令行执行器</td></tr>
+                <tr><td><code>xeMergeTestLogs.cpp</code></td><td>合并测试日志</td></tr>
+                <tr><td><code>xeTestLogCompare.cpp</code></td><td>测试日志比较</td></tr>
+            </tbody>
+        </table>
+
+        <h2 id="execserver">8.1 ExecServer 执行服务器</h2>
+        <p>路径：<code>execserver/</code>，前缀 <code>xs</code></p>
+        <table>
+            <thead><tr><th>文件</th><th>关键类</th><th>说明</th></tr></thead>
+            <tbody>
+                <tr><td><code>xsExecutionServer.hpp/cpp</code></td><td><code>xs::ExecutionServer</code></td><td>执行服务器主类</td></tr>
+                <tr><td><code>xsTcpServer.hpp/cpp</code></td><td><code>xs::TcpServer</code></td><td>TCP 服务器</td></tr>
+                <tr><td><code>xsTestDriver.hpp/cpp</code></td><td><code>xs::TestDriver</code></td><td>测试驱动器</td></tr>
+                <tr><td><code>xsTestProcess.hpp/cpp</code></td><td><code>xs::TestProcess</code></td><td>测试进程抽象</td></tr>
+                <tr><td><code>xsPosixTestProcess.hpp/cpp</code></td><td><code>xs::PosixTestProcess</code></td><td>POSIX 测试进程实现</td></tr>
+                <tr><td><code>xsWin32TestProcess.hpp/cpp</code></td><td><code>xs::Win32TestProcess</code></td><td>Win32 测试进程实现</td></tr>
+                <tr><td><code>xsProtocol.hpp/cpp</code></td><td><code>xs::Protocol</code></td><td>通信协议定义</td></tr>
+            </tbody>
+        </table>
+
+        <h2 id="dependencies">9. 外部依赖</h2>
+        <table>
+            <thead><tr><th>依赖</th><th>路径</th><th>用途</th></tr></thead>
+            <tbody>
+                <tr><td><strong>glslang</strong></td><td><code>external/glslang/</code></td><td>GLSL/HLSL 到 SPIR-V 编译器前端</td></tr>
+                <tr><td><strong>SPIR-V Tools</strong></td><td><code>external/spirv-tools/</code></td><td>SPIR-V 着色器优化和验证</td></tr>
+                <tr><td><strong>SPIR-V Headers</strong></td><td><code>external/spirv-headers/</code></td><td>SPIR-V 规范头文件</td></tr>
+                <tr><td><strong>libpng</strong></td><td><code>external/libpng/</code></td><td>PNG 图像读写（测试结果截图）</td></tr>
+                <tr><td><strong>zlib</strong></td><td><code>external/zlib/</code></td><td>数据压缩（libpng 依赖）</td></tr>
+                <tr><td><strong>Amber</strong></td><td><code>external/amber/</code></td><td>图形测试描述和执行框架</td></tr>
+                <tr><td><strong>jsoncpp</strong></td><td><code>external/jsoncpp/</code></td><td>JSON 解析</td></tr>
+                <tr><td><strong>Vulkan Validation Layers</strong></td><td><code>external/vulkan-validationlayers/</code></td><td>Vulkan 验证层（仅 64 位）</td></tr>
+                <tr><td><strong>Vulkan SC PC Util</strong></td><td><code>external/vulkansc-pcutil/</code></td><td>Vulkan SC 管线缓存工具</td></tr>
+                <tr><td><strong>RenderDoc</strong></td><td><code>external/renderdoc/</code></td><td>RenderDoc 调试集成（可选）</td></tr>
+            </tbody>
+        </table>
+
+        <h3>外部源码获取脚本</h3>
+        <table>
+            <thead><tr><th>脚本</th><th>说明</th></tr></thead>
+            <tbody>
+                <tr><td><code>external/fetch_sources.py</code></td><td>获取 glslang、SPIR-V Tools 等外部源码</td></tr>
+                <tr><td><code>external/fetch_video_decode_samples.py</code></td><td>获取视频解码测试数据</td></tr>
+                <tr><td><code>external/fetch_video_encode_samples.py</code></td><td>获取视频编码测试数据</td></tr>
+            </tbody>
+        </table>
+
+        <h2 id="build">10. 构建系统与项目运行方式</h2>
+
+        <h3>10.1 构建前置条件</h3>
+        <ul>
+            <li><strong>CMake</strong> ≥ 3.20.0</li>
+            <li><strong>Python</strong> 3（用于代码生成和构建脚本）</li>
+            <li><strong>C++ 编译器</strong>：支持 C++11/14（MSVC/GCC/Clang）</li>
+            <li><strong>Git</strong>（版本信息生成）</li>
+        </ul>
+
+        <h3>10.2 获取外部源码</h3>
+        <pre><code>cd external
+python3 fetch_sources.py</code></pre>
+
+        <h3>10.3 构建步骤</h3>
+        <pre><code># 创建构建目录
+mkdir build && cd build
+
+# 配置（默认目标平台）
+cmake ..
+
+# 配置（指定目标平台，如 Android）
+cmake .. -DDEQP_TARGET=android -DANDROID_NDK_PATH=/path/to/ndk
+
+# 配置（选择特定构建目标）
+cmake .. -DSELECTED_BUILD_TARGETS="deqp-vk deqp-vksc"
+
+# 构建
+cmake --build . --parallel
+
+# 仅构建 Vulkan CTS
+cmake --build . --target deqp-vk</code></pre>
+
+        <h3>10.4 主要构建目标</h3>
+        <table>
+            <thead><tr><th>目标</th><th>说明</th></tr></thead>
+            <tbody>
+                <tr><td><code>deqp-vk</code></td><td>Vulkan 一致性测试</td></tr>
+                <tr><td><code>deqp-vksc</code></td><td>Vulkan SC 一致性测试</td></tr>
+                <tr><td><code>deqp-gles2</code></td><td>OpenGL ES 2.0 测试</td></tr>
+                <tr><td><code>deqp-gles3</code></td><td>OpenGL ES 3.0 测试</td></tr>
+                <tr><td><code>deqp-gles31</code></td><td>OpenGL ES 3.1 测试</td></tr>
+                <tr><td><code>deqp-egl</code></td><td>EGL 测试</td></tr>
+                <tr><td><code>deqp-internal</code></td><td>内部框架测试</td></tr>
+                <tr><td><code>glcts</code></td><td>OpenGL/OpenGL ES CTS</td></tr>
+            </tbody>
+        </table>
+
+        <h3>10.5 运行测试</h3>
+        <pre><code># 运行所有 Vulkan 测试
+./deqp-vk
+
+# 运行指定测试用例
+./deqp-vk --deqp-case=dEQP-VK.api.smoke
+
+# 列出所有测试用例
+./deqp-vk --deqp-caselist=help
+
+# 指定日志文件
+./deqp-vk --deqp-log-filename=test.qpa</code></pre>
+
+        <h3>10.6 CMake 选项</h3>
+        <table>
+            <thead><tr><th>选项</th><th>默认值</th><th>说明</th></tr></thead>
+            <tbody>
+                <tr><td><code>DEQP_TARGET</code></td><td><code>default</code></td><td>目标平台</td></tr>
+                <tr><td><code>SELECTED_BUILD_TARGETS</code></td><td><code>""</code></td><td>选择性构建目标列表</td></tr>
+                <tr><td><code>GLES_ALLOW_DIRECT_LINK</code></td><td><code>OFF</code></td><td>允许直接链接 GLES 库</td></tr>
+                <tr><td><code>DEQP_ANDROID_EXE</code></td><td><code>OFF</code></td><td>Android 上构建为可执行文件</td></tr>
+                <tr><td><code>DEQP_DISABLE_VK_VIDEO_TESTS</code></td><td><code>OFF</code></td><td>禁用 Vulkan 视频测试</td></tr>
+            </tbody>
+        </table>
+
+        <h2 id="depgraph">11. 模块间依赖关系</h2>
+        <div class="arch-diagram">
+            <pre><code>deqp-vk (可执行文件)
+  ├── deqp-vk-package (静态库)
+  │   ├── vktTestCase (Vulkan 测试用例基类)
+  │   ├── vkutil (Vulkan 框架)
+  │   │   ├── tcutil (通用测试框架)
+  │   │   │   ├── qphelper (C 辅助库)
+  │   │   │   ├── decpp (C++ 基础库)
+  │   │   │   │   └── debase (C 基础库)
+  │   │   │   ├── depool (内存池)
+  │   │   │   ├── dethread (线程)
+  │   │   │   ├── deutil (实用工具)
+  │   │   │   └── destream (流操作)
+  │   │   └── glslang / SPIR-V Tools
+  │   └── glutil (OpenGL 工具)
+  │       └── eglutil (EGL 工具)
+  └── tcutil-platform (平台库)
+      └── 平台特定实现
+
+deqp-gles3 (可执行文件)
+  ├── deqp-gles3-package (静态库)
+  │   ├── tes3TestCase (GLES3 测试用例)
+  │   ├── glsShared (GL 共享测试)
+  │   ├── glutil (OpenGL 工具)
+  │   ├── eglutil (EGL 工具)
+  │   └── tcutil (通用测试框架)
+  └── tcutil-platform (平台库)</code></pre>
+        </div>
+
+        <h2 id="flow">12. 测试执行流程</h2>
+
+        <h3>12.1 本地执行流程</h3>
+        <div class="flow-diagram">
+            <pre><code>1. main() (tcuMain.cpp)
+   │
+   ├── 解析命令行参数 (tcu::CommandLine)
+   ├── 创建资源归档 (tcu::DirArchive)
+   ├── 创建测试日志 (tcu::TestLog)
+   ├── 创建平台对象 (createPlatform())
+   └── 创建应用对象 (tcu::App)
+       │
+       ├── 初始化测试包注册表
+       ├── 构建测试层次树
+       └── 创建 TestSessionExecutor
+           │
+           └── iterate() 循环
+               │
+               ├── 选择下一个测试用例
+               ├── 执行测试用例
+               │   ├── 初始化测试上下文
+               │   ├── 调用 TestCase::iterate()
+               │   ├── 收集测试结果
+               │   └── 写入测试日志
+               └── 返回是否继续</code></pre>
+        </div>
+
+        <h3>12.2 远程执行流程</h3>
+        <div class="flow-diagram">
+            <pre><code>Executor (主机端)                    ExecServer (目标设备端)
+    │                                       │
+    ├── 连接到 ExecServer ─────────────────►│
+    │                                       ├── 接受连接
+    ├── 请求测试用例列表 ──────────────────►│
+    │                                       ├── 枚举测试用例
+    │◄────────────── 返回测试用例列表 ───────┤
+    │                                       │
+    ├── 请求执行测试 ──────────────────────►│
+    │                                       ├── 启动测试进程
+    │                                       ├── 执行测试
+    │◄────────────── 返回测试结果/日志 ──────┤
+    │                                       │
+    ├── 请求执行下一个测试 ────────────────►│
+    │   ...                                 │
+    └── 断开连接 ─────────────────────────►│
+                                            └── 清理资源</code></pre>
+        </div>
+
+        <h3>12.3 测试用例生命周期</h3>
+        <ol>
+            <li><code>TestPackage::init()</code> — 初始化测试包</li>
+            <li><code>TestCaseGroup::init()</code> — 构建测试层次结构</li>
+            <li><code>TestCase::init()</code> — 初始化测试用例</li>
+            <li><code>TestCase::iterate()</code> — 执行测试迭代（可能多次）</li>
+            <li><code>TestCase::deinit()</code> — 清理测试用例</li>
+            <li>结果记录到 TestLog — Pass/Fail/NotSupported/QualityWarning/etc.</li>
+        </ol>
+
+        <h2 id="scripts">13. 辅助脚本</h2>
+
+        <h3>代码生成脚本</h3>
+        <table>
+            <thead><tr><th>脚本</th><th>说明</th></tr></thead>
+            <tbody>
+                <tr><td><code>scripts/gen_egl.py</code></td><td>生成 EGL 封装代码</td></tr>
+                <tr><td><code>scripts/opengl/gen_all.py</code></td><td>生成所有 OpenGL 封装代码</td></tr>
+                <tr><td><code>scripts/opengl/gen_call_log_wrapper.py</code></td><td>生成 API 调用日志包装器</td></tr>
+                <tr><td><code>scripts/opengl/gen_str_util.py</code></td><td>生成枚举字符串工具</td></tr>
+                <tr><td><code>scripts/opengl/gen_func_ptrs.py</code></td><td>生成函数指针</td></tr>
+            </tbody>
+        </table>
+
+        <h3>构建与发布脚本</h3>
+        <table>
+            <thead><tr><th>脚本</th><th>说明</th></tr></thead>
+            <tbody>
+                <tr><td><code>scripts/make_release.py</code></td><td>创建发布包</td></tr>
+                <tr><td><code>scripts/build_caselists.py</code></td><td>构建测试用例列表</td></tr>
+                <tr><td><code>scripts/ctsbuild/build.py</code></td><td>CTS 构建入口</td></tr>
+                <tr><td><code>scripts/gen_android_bp.py</code></td><td>生成 Android.bp 文件</td></tr>
+            </tbody>
+        </table>
+
+        <h3>源码检查脚本</h3>
+        <table>
+            <thead><tr><th>脚本</th><th>说明</th></tr></thead>
+            <tbody>
+                <tr><td><code>scripts/src_util/check_boms.py</code></td><td>检查 BOM 标记</td></tr>
+                <tr><td><code>scripts/src_util/check_encoding.py</code></td><td>检查文件编码</td></tr>
+                <tr><td><code>scripts/src_util/check_license.py</code></td><td>检查许可证头</td></tr>
+                <tr><td><code>scripts/src_util/check_whitespace.py</code></td><td>检查空白字符</td></tr>
+                <tr><td><code>scripts/src_util/pre_commit.py</code></td><td>预提交检查</td></tr>
+            </tbody>
+        </table>
+
+        <h2 id="naming">附录：命名约定</h2>
+        <table>
+            <thead><tr><th>前缀</th><th>模块</th></tr></thead>
+            <tbody>
+                <tr><td><code>de</code></td><td>delibs 基础库（C/C++ 接口）</td></tr>
+                <tr><td><code>qp</code></td><td>qphelper C 辅助库</td></tr>
+                <tr><td><code>tcu</code></td><td>通用测试框架（tcutil）</td></tr>
+                <tr><td><code>glu</code></td><td>OpenGL 工具库（glutil）</td></tr>
+                <tr><td><code>eglu</code></td><td>EGL 工具库（eglutil）</td></tr>
+                <tr><td><code>rr</code></td><td>参考渲染器</td></tr>
+                <tr><td><code>rsg</code></td><td>随机着色器生成器</td></tr>
+                <tr><td><code>xe</code></td><td>Executor 执行器</td></tr>
+                <tr><td><code>xs</code></td><td>ExecServer 执行服务器</td></tr>
+                <tr><td><code>tegl</code></td><td>EGL 测试模块</td></tr>
+                <tr><td><code>tes2/tes3/tes31</code></td><td>OpenGL ES 测试模块</td></tr>
+                <tr><td><code>gls</code></td><td>GL 共享测试工具</td></tr>
+                <tr><td><code>dit</code></td><td>内部测试模块</td></tr>
+                <tr><td><code>vk</code></td><td>Vulkan 框架</td></tr>
+                <tr><td><code>vkt</code></td><td>Vulkan 测试模块</td></tr>
+                <tr><td><code>glc</code></td><td>OpenGL CTS 通用模块</td></tr>
+                <tr><td><code>gl3c/gl4c</code></td><td>OpenGL 3.x/4.x CTS</td></tr>
+                <tr><td><code>es2c/es3c/es31c/es32c</code></td><td>OpenGL ES CTS</td></tr>
+                <tr><td><code>esextc</code></td><td>OpenGL ES 扩展 CTS</td></tr>
+            </tbody>
+        </table>
+
+        <footer style="margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: 13px;">
+            <p>本文档自动生成于 2026-05-30，基于 VK-GL-CTS 项目源码分析</p>
+        </footer>
+    </main>
+</div>
+
+<script>
+    const sidebarLinks = document.querySelectorAll('.sidebar nav a');
+    const sections = document.querySelectorAll('[id]');
+
+    function updateActiveLink() {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        sidebarLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', updateActiveLink);
+    updateActiveLink();
+</script>
+</body>
+</html>
