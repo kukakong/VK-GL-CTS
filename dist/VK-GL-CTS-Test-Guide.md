@@ -14,19 +14,19 @@
 
 | 压缩包 | 大小 | 说明 |
 |--------|------|------|
-| `linux-x86_64.tar.gz` | ~41MB | Linux 64位测试程序 |
-| `linux-x86_32.tar.gz` | ~44MB | Linux 32位测试程序 |
+| `linux-arm64.tar.gz` | ~39MB | Linux ARM64测试程序 |
+| `linux-arm32.tar.gz` | ~37MB | Linux ARM32测试程序 |
 | `android-arm64.tar.gz` | ~7.7MB | Android ARM64静态库 |
 | `android-arm32.tar.gz` | ~7.6MB | Android ARM32静态库 |
 
 ### 1.2 解压方法
 
 ```bash
-# 解压 Linux 64位测试程序
-tar -xzvf linux-x86_64.tar.gz
+# 解压 Linux ARM64测试程序
+tar -xzvf linux-arm64.tar.gz
 
-# 解压 Linux 32位测试程序
-tar -xzvf linux-x86_32.tar.gz
+# 解压 Linux ARM32测试程序
+tar -xzvf linux-arm32.tar.gz
 
 # 解压 Android ARM64静态库
 tar -xzvf android-arm64.tar.gz
@@ -35,7 +35,7 @@ tar -xzvf android-arm64.tar.gz
 tar -xzvf android-arm32.tar.gz
 ```
 
-### 1.3 Linux x86_64 (64位)
+### 1.3 Linux ARM64 (64位)
 
 | 文件名 | 说明 |
 |--------|------|
@@ -45,7 +45,7 @@ tar -xzvf android-arm32.tar.gz
 | `deqp-gles31` | OpenGL ES 3.1 一致性测试 |
 | `glcts` | OpenGL CTS 综合测试 |
 
-### 1.4 Linux x86_32 (32位)
+### 1.4 Linux ARM32 (32位)
 
 | 文件名 | 说明 |
 |--------|------|
@@ -149,7 +149,7 @@ export VK_ICD_FILENAMES=/etc/vulkan/icd.d/mali.json
 
 ```bash
 # 进入测试目录
-cd /path/to/dist/linux-x86_64
+cd /path/to/dist/linux-arm64
 
 # 运行所有 EGL 测试并输出到文件
 ./deqp-egl --deqp-log-filename=egl_test_result.qpa
@@ -312,10 +312,10 @@ RESULT_DIR="cts_results_$(date +%Y%m%d_%H%M%S)"
 mkdir -p $RESULT_DIR
 
 # 运行测试
-./linux-x86_64/deqp-egl --deqp-log-filename=$RESULT_DIR/egl.qpa
-./linux-x86_64/deqp-gles2 --deqp-case="dEQP-GLES2.functional.*" --deqp-log-filename=$RESULT_DIR/gles2.qpa
-./linux-x86_64/deqp-gles3 --deqp-case="dEQP-GLES3.functional.*" --deqp-log-filename=$RESULT_DIR/gles3.qpa
-./linux-x86_64/deqp-gles31 --deqp-case="dEQP-GLES31.functional.*" --deqp-log-filename=$RESULT_DIR/gles31.qpa
+./linux-arm64/deqp-egl --deqp-log-filename=$RESULT_DIR/egl.qpa
+./linux-arm64/deqp-gles2 --deqp-case="dEQP-GLES2.functional.*" --deqp-log-filename=$RESULT_DIR/gles2.qpa
+./linux-arm64/deqp-gles3 --deqp-case="dEQP-GLES3.functional.*" --deqp-log-filename=$RESULT_DIR/gles3.qpa
+./linux-arm64/deqp-gles31 --deqp-case="dEQP-GLES31.functional.*" --deqp-log-filename=$RESULT_DIR/gles31.qpa
 
 echo "测试完成，结果保存在 $RESULT_DIR"
 ```
