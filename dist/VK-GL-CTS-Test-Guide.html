@@ -31,7 +31,30 @@
         <p>本文档提供 VK-GL-CTS (Khronos 图形 API 一致性测试套件) 的详细使用说明。</p>
 
         <h2>1. 构建产物清单</h2>
-        <h3>1.1 Linux x86_64 (64位)</h3>
+        <h3>1.1 压缩包说明</h3>
+        <p>由于测试程序文件较大，所有构建产物已压缩为 tar.gz 格式：</p>
+        <table>
+            <tr><th>压缩包</th><th>大小</th><th>说明</th></tr>
+            <tr><td><code>linux-x86_64.tar.gz</code></td><td>~41MB</td><td>Linux 64位测试程序</td></tr>
+            <tr><td><code>linux-x86_32.tar.gz</code></td><td>~44MB</td><td>Linux 32位测试程序</td></tr>
+            <tr><td><code>android-arm64.tar.gz</code></td><td>~7.7MB</td><td>Android ARM64静态库</td></tr>
+            <tr><td><code>android-arm32.tar.gz</code></td><td>~7.6MB</td><td>Android ARM32静态库</td></tr>
+        </table>
+
+        <h3>1.2 解压方法</h3>
+        <pre><code># 解压 Linux 64位测试程序
+tar -xzvf linux-x86_64.tar.gz
+
+# 解压 Linux 32位测试程序
+tar -xzvf linux-x86_32.tar.gz
+
+# 解压 Android ARM64静态库
+tar -xzvf android-arm64.tar.gz
+
+# 解压 Android ARM32静态库
+tar -xzvf android-arm32.tar.gz</code></pre>
+
+        <h3>1.3 Linux x86_64 (64位)</h3>
         <table>
             <tr><th>文件名</th><th>说明</th></tr>
             <tr><td><code>deqp-egl</code></td><td>EGL 一致性测试</td></tr>
@@ -41,7 +64,7 @@
             <tr><td><code>glcts</code></td><td>OpenGL CTS 综合测试</td></tr>
         </table>
 
-        <h3>1.2 Linux x86_32 (32位)</h3>
+        <h3>1.4 Linux x86_32 (32位)</h3>
         <table>
             <tr><th>文件名</th><th>说明</th></tr>
             <tr><td><code>deqp-egl</code></td><td>EGL 一致性测试</td></tr>
@@ -50,6 +73,9 @@
             <tr><td><code>deqp-gles31</code></td><td>OpenGL ES 3.1 一致性测试</td></tr>
             <tr><td><code>glcts</code></td><td>OpenGL CTS 综合测试</td></tr>
         </table>
+
+        <h3>1.5 Android ARM64/ARM32</h3>
+        <p>Android平台提供静态库文件，需要使用ndk-build构建APK。</p>
 
         <h2>2. Mali GPU 驱动配置</h2>
         <h3>2.1 Android 平台</h3>

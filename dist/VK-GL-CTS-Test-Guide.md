@@ -2,13 +2,40 @@
 
 ## 概述
 
-本文档提供 VK-GL-CTS (Khronos 图形 API 一致性测试套件) 的详细使用说明，包括各平台测试程序的使用方法、Mali GPU 驱动配置以及测试结果输出配置。
+本文档提供 VK-GL-CTS (Khronos 图形 API 一致性测试套件) 的详细使用说明。
 
 ---
 
 ## 1. 构建产物清单
 
-### 1.1 Linux x86_64 (64位)
+### 1.1 压缩包说明
+
+由于测试程序文件较大，所有构建产物已压缩为 tar.gz 格式：
+
+| 压缩包 | 大小 | 说明 |
+|--------|------|------|
+| `linux-x86_64.tar.gz` | ~41MB | Linux 64位测试程序 |
+| `linux-x86_32.tar.gz` | ~44MB | Linux 32位测试程序 |
+| `android-arm64.tar.gz` | ~7.7MB | Android ARM64静态库 |
+| `android-arm32.tar.gz` | ~7.6MB | Android ARM32静态库 |
+
+### 1.2 解压方法
+
+```bash
+# 解压 Linux 64位测试程序
+tar -xzvf linux-x86_64.tar.gz
+
+# 解压 Linux 32位测试程序
+tar -xzvf linux-x86_32.tar.gz
+
+# 解压 Android ARM64静态库
+tar -xzvf android-arm64.tar.gz
+
+# 解压 Android ARM32静态库
+tar -xzvf android-arm32.tar.gz
+```
+
+### 1.3 Linux x86_64 (64位)
 
 | 文件名 | 说明 |
 |--------|------|
@@ -18,7 +45,7 @@
 | `deqp-gles31` | OpenGL ES 3.1 一致性测试 |
 | `glcts` | OpenGL CTS 综合测试 |
 
-### 1.2 Linux x86_32 (32位)
+### 1.4 Linux x86_32 (32位)
 
 | 文件名 | 说明 |
 |--------|------|
@@ -27,6 +54,24 @@
 | `deqp-gles3` | OpenGL ES 3.0 一致性测试 |
 | `deqp-gles31` | OpenGL ES 3.1 一致性测试 |
 | `glcts` | OpenGL CTS 综合测试 |
+
+### 1.5 Android ARM64
+
+| 文件名 | 说明 |
+|--------|------|
+| `libdeqp-egl-package.a` | EGL 测试包静态库 |
+| `libdeqp-gles2-package.a` | OpenGL ES 2.0 测试包静态库 |
+| `libdeqp-gles3-package.a` | OpenGL ES 3.0 测试包静态库 |
+| `libdeqp-gles31-package.a` | OpenGL ES 3.1 测试包静态库 |
+
+### 1.6 Android ARM32
+
+| 文件名 | 说明 |
+|--------|------|
+| `libdeqp-egl-package.a` | EGL 测试包静态库 |
+| `libdeqp-gles2-package.a` | OpenGL ES 2.0 测试包静态库 |
+| `libdeqp-gles3-package.a` | OpenGL ES 3.0 测试包静态库 |
+| `libdeqp-gles31-package.a` | OpenGL ES 3.1 测试包静态库 |
 
 ---
 
@@ -34,7 +79,7 @@
 
 ### 2.1 Android 平台
 
-Android 平台上 Mali GPU 库文件通常位于以下路径：
+Android 平台上 Mali GPU 库文件位于以下路径：
 
 ```
 # 32位系统
@@ -46,19 +91,17 @@ Android 平台上 Mali GPU 库文件通常位于以下路径：
 
 **配置步骤：**
 
-1. 确认 Mali 库存在：
 ```bash
+# 确认 Mali 库存在
 adb shell ls -la /vendor/lib*/egl/libGLES_mali.so
-```
 
-2. 如需使用特定库，设置环境变量：
-```bash
+# 设置环境变量
 adb shell setenv LD_LIBRARY_PATH /vendor/lib64/egl:$LD_LIBRARY_PATH
 ```
 
 ### 2.2 Linux 平台
 
-Linux 平台上 Mali GPU 库文件可能位于以下路径：
+Linux 平台上 Mali GPU 库文件位于以下路径：
 
 ```
 # 常见路径
@@ -74,18 +117,14 @@ Linux 平台上 Mali GPU 库文件可能位于以下路径：
 
 **配置步骤：**
 
-1. 查找 Mali 库：
 ```bash
+# 查找 Mali 库
 find /lib /usr -name "libmali.so" -o -name "libMali.so" 2>/dev/null
-```
 
-2. 设置库路径（假设库在 `/lib64/libmali.so`）：
-```bash
+# 设置库路径
 export LD_LIBRARY_PATH=/lib64:$LD_LIBRARY_PATH
-```
 
-3. 对于 Vulkan 测试，配置 ICD 文件：
-```bash
+# Vulkan ICD 配置
 mkdir -p /etc/vulkan/icd.d
 echo '{"icd":{"library_path":"/lib64/libmali.so","api_version":"1.2"}}' > /etc/vulkan/icd.d/mali.json
 export VK_ICD_FILENAMES=/etc/vulkan/icd.d/mali.json
@@ -95,13 +134,7 @@ export VK_ICD_FILENAMES=/etc/vulkan/icd.d/mali.json
 
 ## 3. 测试执行方法
 
-### 3.1 基本命令格式
-
-```bash
-./deqp-<target> [options]
-```
-
-### 3.2 常用命令行选项
+### 3.1 常用命令行选项
 
 | 选项 | 说明 |
 |------|------|
@@ -109,12 +142,10 @@ export VK_ICD_FILENAMES=/etc/vulkan/icd.d/mali.json
 | `--deqp-caselist-file=<file>` | 从文件读取测试用例列表 |
 | `--deqp-log-filename=<file>` | 指定日志输出文件 |
 | `--deqp-log-format=<format>` | 日志格式 (plain, qpa, xml) |
-| `--deqp-stdin-caselist` | 从标准输入读取测试用例 |
 | `--deqp-watchdog` | 启用看门狗超时 |
 | `--deqp-crash-handler` | 启用崩溃处理 |
-| `--deqp-visibility=hidden` | 隐藏窗口运行 |
 
-### 3.3 Linux 平台测试示例
+### 3.2 Linux 平台测试示例
 
 ```bash
 # 进入测试目录
@@ -133,7 +164,7 @@ cd /path/to/dist/linux-x86_64
 ./deqp-gles31 --deqp-log-format=xml --deqp-log-filename=gles31_result.xml
 ```
 
-### 3.4 Android 平台测试示例
+### 3.3 Android 平台测试示例
 
 ```bash
 # 推送测试程序到设备
@@ -281,7 +312,7 @@ RESULT_DIR="cts_results_$(date +%Y%m%d_%H%M%S)"
 mkdir -p $RESULT_DIR
 
 # 运行测试
-./linux-x86_64/deqp-egl --deqp-log-filename=$RESULT_DIR/egl.qpa --deqp-watchdog
+./linux-x86_64/deqp-egl --deqp-log-filename=$RESULT_DIR/egl.qpa
 ./linux-x86_64/deqp-gles2 --deqp-case="dEQP-GLES2.functional.*" --deqp-log-filename=$RESULT_DIR/gles2.qpa
 ./linux-x86_64/deqp-gles3 --deqp-case="dEQP-GLES3.functional.*" --deqp-log-filename=$RESULT_DIR/gles3.qpa
 ./linux-x86_64/deqp-gles31 --deqp-case="dEQP-GLES31.functional.*" --deqp-log-filename=$RESULT_DIR/gles31.qpa
