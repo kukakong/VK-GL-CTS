@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VK-GL-CTS 测试使用指南</title>
+    <style>
+        :root { --bg-color: #f6f8fa; --text-color: #24292f; --border-color: #d0d7de; --code-bg: #ffffff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg-color); color: var(--text-color); line-height: 1.6; }
+        .content { padding: 40px 48px; max-width: 1000px; margin: 0 auto; }
+        h1 { font-size: 32px; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border-color); }
+        h2 { font-size: 24px; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border-color); }
+        h3 { font-size: 20px; margin: 24px 0 12px; }
+        p { margin-bottom: 16px; }
+        code { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 13.6px; background: rgba(175,184,193,0.2); padding: 0.2em 0.4em; border-radius: 6px; }
+        pre { background: var(--code-bg); border: 1px solid var(--border-color); border-radius: 6px; padding: 16px; overflow-x: auto; margin: 16px 0; }
+        pre code { background: none; padding: 0; }
+        table { width: 100%; border-collapse: collapse; margin: 16px 0; background: var(--code-bg); border: 1px solid var(--border-color); border-radius: 6px; }
+        th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border-color); }
+        th { background: var(--bg-color); font-weight: 600; }
+        tr:last-child td { border-bottom: none; }
+        ul, ol { padding-left: 24px; margin: 16px 0; }
+        li { margin: 8px 0; }
+        .footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--border-color); font-size: 14px; color: #656d76; }
+    </style>
+</head>
+<body>
+    <main class="content">
+        <h1>VK-GL-CTS 测试使用指南</h1>
+        <p>本文档提供 VK-GL-CTS (Khronos 图形 API 一致性测试套件) 的详细使用说明。</p>
+
+        <h2>1. 构建产物清单</h2>
+        <h3>1.1 Linux x86_64 (64位)</h3>
+        <table>
+            <tr><th>文件名</th><th>说明</th></tr>
+            <tr><td><code>deqp-egl</code></td><td>EGL 一致性测试</td></tr>
+            <tr><td><code>deqp-gles2</code></td><td>OpenGL ES 2.0 一致性测试</td></tr>
+            <tr><td><code>deqp-gles3</code></td><td>OpenGL ES 3.0 一致性测试</td></tr>
+            <tr><td><code>deqp-gles31</code></td><td>OpenGL ES 3.1 一致性测试</td></tr>
+            <tr><td><code>glcts</code></td><td>OpenGL CTS 综合测试</td></tr>
+        </table>
+
+        <h3>1.2 Linux x86_32 (32位)</h3>
+        <table>
+            <tr><th>文件名</th><th>说明</th></tr>
+            <tr><td><code>deqp-egl</code></td><td>EGL 一致性测试</td></tr>
+            <tr><td><code>deqp-gles2</code></td><td>OpenGL ES 2.0 一致性测试</td></tr>
+            <tr><td><code>deqp-gles3</code></td><td>OpenGL ES 3.0 一致性测试</td></tr>
+            <tr><td><code>deqp-gles31</code></td><td>OpenGL ES 3.1 一致性测试</td></tr>
+            <tr><td><code>glcts</code></td><td>OpenGL CTS 综合测试</td></tr>
+        </table>
+
+        <h2>2. Mali GPU 驱动配置</h2>
+        <h3>2.1 Android 平台</h3>
+        <pre><code># 32位系统
+/vendor/lib/egl/libGLES_mali.so
+
+# 64位系统
+/vendor/lib64/egl/libGLES_mali.so</code></pre>
+
+        <h3>2.2 Linux 平台</h3>
+        <pre><code># 常见路径
+/lib/libmali.so
+/lib64/libmali.so
+/lib/libMali.so
+/lib64/libMali.so
+
+# 设置库路径
+export LD_LIBRARY_PATH=/lib64:$LD_LIBRARY_PATH</code></pre>
+
+        <h2>3. 测试执行方法</h2>
+        <h3>3.1 常用命令行选项</h3>
+        <table>
+            <tr><th>选项</th><th>说明</th></tr>
+            <tr><td><code>--deqp-case=&lt;pattern&gt;</code></td><td>指定测试用例过滤模式</td></tr>
+            <tr><td><code>--deqp-log-filename=&lt;file&gt;</code></td><td>指定日志输出文件</td></tr>
+            <tr><td><code>--deqp-log-format=&lt;format&gt;</code></td><td>日志格式 (plain, qpa, xml)</td></tr>
+            <tr><td><code>--deqp-watchdog</code></td><td>启用看门狗超时</td></tr>
+        </table>
+
+        <h3>3.2 Linux 平台测试示例</h3>
+        <pre><code># 运行所有 EGL 测试并输出到文件
+./deqp-egl --deqp-log-filename=egl_test_result.qpa
+
+# 运行特定测试用例
+./deqp-gles2 --deqp-case="dEQP-GLES2.functional.*" --deqp-log-filename=gles2_functional.qpa
+
+# 使用 XML 格式输出
+./deqp-gles31 --deqp-log-format=xml --deqp-log-filename=gles31_result.xml</code></pre>
+
+        <h2>4. 测试结果输出配置</h2>
+        <table>
+            <tr><th>格式</th><th>说明</th><th>文件扩展名</th></tr>
+            <tr><td><code>qpa</code></td><td>QPA 格式 (默认)</td><td>.qpa</td></tr>
+            <tr><td><code>xml</code></td><td>XML 格式</td><td>.xml</td></tr>
+            <tr><td><code>plain</code></td><td>纯文本格式</td><td>.txt</td></tr>
+        </table>
+
+        <h2>5. 完整测试流程示例</h2>
+        <pre><code>#!/bin/bash
+export LD_LIBRARY_PATH=/lib64:$LD_LIBRARY_PATH
+RESULT_DIR="cts_results_$(date +%Y%m%d_%H%M%S)"
+mkdir -p $RESULT_DIR
+
+./linux-x86_64/deqp-egl --deqp-log-filename=$RESULT_DIR/egl.qpa
+./linux-x86_64/deqp-gles2 --deqp-case="dEQP-GLES2.functional.*" --deqp-log-filename=$RESULT_DIR/gles2.qpa
+./linux-x86_64/deqp-gles3 --deqp-case="dEQP-GLES3.functional.*" --deqp-log-filename=$RESULT_DIR/gles3.qpa
+./linux-x86_64/deqp-gles31 --deqp-case="dEQP-GLES31.functional.*" --deqp-log-filename=$RESULT_DIR/gles31.qpa
+
+echo "测试完成，结果保存在 $RESULT_DIR"</code></pre>
+
+        <div class="footer">
+            <p>文档生成时间: 2026-06-03 | VK-GL-CTS 版本: 基于 Khronos 官方仓库</p>
+        </div>
+    </main>
+</body>
+</html>
