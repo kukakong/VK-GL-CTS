@@ -1,0 +1,2 @@
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libglcts-es32.a "CMakeFiles/glcts-es32.dir/es32cTestPackage.cpp.o" "CMakeFiles/glcts-es32.dir/es32cCopyImageTests.cpp.o"
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libglcts-es32.a

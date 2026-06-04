@@ -1,0 +1,2 @@
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libGenericCodeGen.a CMakeFiles/GenericCodeGen.dir/stub.cpp.o
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libGenericCodeGen.a

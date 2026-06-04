@@ -1,0 +1,2 @@
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libeglwrapper.a CMakeFiles/eglwrapper.dir/eglwDefs.cpp.o CMakeFiles/eglwrapper.dir/eglwFunctions.cpp.o CMakeFiles/eglwrapper.dir/eglwLibrary.cpp.o CMakeFiles/eglwrapper.dir/eglwWrapper.cpp.o
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libeglwrapper.a

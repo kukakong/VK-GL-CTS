@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/deqp-gles3-performance.dir/es3pBlendTests.cpp.o"
+  "CMakeFiles/deqp-gles3-performance.dir/es3pBlendTests.cpp.o.d"
+  "CMakeFiles/deqp-gles3-performance.dir/es3pBufferDataUploadTests.cpp.o"
+  "CMakeFiles/deqp-gles3-performance.dir/es3pBufferDataUploadTests.cpp.o.d"
+  "CMakeFiles/deqp-gles3-performance.dir/es3pDepthTests.cpp.o"
+  "CMakeFiles/deqp-gles3-performance.dir/es3pDepthTests.cpp.o.d"
+  "CMakeFiles/deqp-gles3-performance.dir/es3pPerformanceTests.cpp.o"
+  "CMakeFiles/deqp-gles3-performance.dir/es3pPerformanceTests.cpp.o.d"
+  "CMakeFiles/deqp-gles3-performance.dir/es3pRedundantStateChangeTests.cpp.o"
+  "CMakeFiles/deqp-gles3-performance.dir/es3pRedundantStateChangeTests.cpp.o.d"
+  "CMakeFiles/deqp-gles3-performance.dir/es3pShaderCompilationCases.cpp.o"
+  "CMakeFiles/deqp-gles3-performance.dir/es3pShaderCompilationCases.cpp.o.d"
+  "CMakeFiles/deqp-gles3-performance.dir/es3pShaderCompilerTests.cpp.o"
+  "CMakeFiles/deqp-gles3-performance.dir/es3pShaderCompilerTests.cpp.o.d"
+  "CMakeFiles/deqp-gles3-performance.dir/es3pShaderControlStatementTests.cpp.o"
+  "CMakeFiles/deqp-gles3-performance.dir/es3pShaderControlStatementTests.cpp.o.d"
+  "CMakeFiles/deqp-gles3-performance.dir/es3pShaderOperatorTests.cpp.o"
+  "CMakeFiles/deqp-gles3-performance.dir/es3pShaderOperatorTests.cpp.o.d"
+  "CMakeFiles/deqp-gles3-performance.dir/es3pShaderOptimizationTests.cpp.o"
+  "CMakeFiles/deqp-gles3-performance.dir/es3pShaderOptimizationTests.cpp.o.d"
+  "CMakeFiles/deqp-gles3-performance.dir/es3pStateChangeCallTests.cpp.o"
+  "CMakeFiles/deqp-gles3-performance.dir/es3pStateChangeCallTests.cpp.o.d"
+  "CMakeFiles/deqp-gles3-performance.dir/es3pStateChangeTests.cpp.o"
+  "CMakeFiles/deqp-gles3-performance.dir/es3pStateChangeTests.cpp.o.d"
+  "CMakeFiles/deqp-gles3-performance.dir/es3pTextureCases.cpp.o"
+  "CMakeFiles/deqp-gles3-performance.dir/es3pTextureCases.cpp.o.d"
+  "CMakeFiles/deqp-gles3-performance.dir/es3pTextureCountTests.cpp.o"
+  "CMakeFiles/deqp-gles3-performance.dir/es3pTextureCountTests.cpp.o.d"
+  "CMakeFiles/deqp-gles3-performance.dir/es3pTextureFilteringTests.cpp.o"
+  "CMakeFiles/deqp-gles3-performance.dir/es3pTextureFilteringTests.cpp.o.d"
+  "CMakeFiles/deqp-gles3-performance.dir/es3pTextureFormatTests.cpp.o"
+  "CMakeFiles/deqp-gles3-performance.dir/es3pTextureFormatTests.cpp.o.d"
+  "libdeqp-gles3-performance.a"
+  "libdeqp-gles3-performance.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/deqp-gles3-performance.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

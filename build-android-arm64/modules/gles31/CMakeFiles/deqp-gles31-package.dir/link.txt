@@ -1,0 +1,2 @@
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libdeqp-gles31-package.a "CMakeFiles/deqp-gles31-package.dir/tes31Context.cpp.o" "CMakeFiles/deqp-gles31-package.dir/tes31InfoTests.cpp.o" "CMakeFiles/deqp-gles31-package.dir/tes31TestCase.cpp.o" "CMakeFiles/deqp-gles31-package.dir/tes31TestPackage.cpp.o" "CMakeFiles/deqp-gles31-package.dir/tgl45es31TestPackage.cpp.o"
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libdeqp-gles31-package.a

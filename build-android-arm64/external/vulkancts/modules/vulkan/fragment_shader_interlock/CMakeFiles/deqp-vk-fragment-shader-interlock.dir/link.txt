@@ -1,0 +1,2 @@
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libdeqp-vk-fragment-shader-interlock.a "CMakeFiles/deqp-vk-fragment-shader-interlock.dir/vktFragmentShaderInterlockTests.cpp.o" "CMakeFiles/deqp-vk-fragment-shader-interlock.dir/vktFragmentShaderInterlockBasic.cpp.o"
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libdeqp-vk-fragment-shader-interlock.a

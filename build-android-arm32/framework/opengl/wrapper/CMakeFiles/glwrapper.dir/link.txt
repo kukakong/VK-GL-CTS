@@ -1,0 +1,2 @@
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libglwrapper.a CMakeFiles/glwrapper.dir/glwDefs.cpp.o CMakeFiles/glwrapper.dir/glwFunctions.cpp.o CMakeFiles/glwrapper.dir/glwInitES20Direct.cpp.o CMakeFiles/glwrapper.dir/glwInitES30Direct.cpp.o CMakeFiles/glwrapper.dir/glwInitES31Direct.cpp.o CMakeFiles/glwrapper.dir/glwInitES32Direct.cpp.o CMakeFiles/glwrapper.dir/glwInitFunctions.cpp.o CMakeFiles/glwrapper.dir/glwWrapper.cpp.o
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libglwrapper.a

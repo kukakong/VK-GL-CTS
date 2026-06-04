@@ -20,5 +20,7 @@ set(DEQP_VK_MEMORY_MODEL_SRCS
 add_library(deqp-vk-memory-model STATIC ${DEQP_VK_MEMORY_MODEL_SRCS})
 target_link_libraries(deqp-vk-memory-model tcutil vkutil)
 
-add_library(deqp-vksc-memory-model STATIC ${DEQP_VK_MEMORY_MODEL_SRCS})
-target_link_libraries(deqp-vksc-memory-model PUBLIC deqp-vksc-util tcutil vkscutil)
+if (NOT DEQP_DISABLE_VKSC)
+	add_library(deqp-vksc-memory-model STATIC ${DEQP_VK_MEMORY_MODEL_SRCS})
+	target_link_libraries(deqp-vksc-memory-model PUBLIC deqp-vksc-util tcutil vkscutil)
+endif()

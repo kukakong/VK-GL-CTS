@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingBufferDeviceAddressTests.cpp.o"
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingBufferDeviceAddressTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingDescriptorBufferTests.cpp.o"
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingDescriptorBufferTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingDescriptorCombinationTests.cpp.o"
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingDescriptorCombinationTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingDescriptorCopyTests.cpp.o"
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingDescriptorCopyTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingDescriptorHeapTests.cpp.o"
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingDescriptorHeapTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingDescriptorInlineUniformTests.cpp.o"
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingDescriptorInlineUniformTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingDescriptorSetRandomTests.cpp.o"
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingDescriptorSetRandomTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingDescriptorUpdateASTests.cpp.o"
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingDescriptorUpdateASTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingDescriptorUpdateTests.cpp.o"
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingDescriptorUpdateTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingDynamicOffsetTests.cpp.o"
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingDynamicOffsetTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingModelTests.cpp.o"
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingModelTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingMutableTests.cpp.o"
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingMutableTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingPushConstantBankTests.cpp.o"
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingPushConstantBankTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingShaderAccessTests.cpp.o"
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingShaderAccessTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingStagesTests.cpp.o"
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingStagesTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingUnusedInvalidDescriptorTests.cpp.o"
+  "CMakeFiles/deqp-vk-binding-model.dir/vktBindingUnusedInvalidDescriptorTests.cpp.o.d"
+  "libdeqp-vk-binding-model.a"
+  "libdeqp-vk-binding-model.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/deqp-vk-binding-model.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

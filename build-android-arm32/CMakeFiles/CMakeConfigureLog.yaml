@@ -1,0 +1,853 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:228 (message)"
+      - "CMakeLists.txt:32 (project)"
+    message: |
+      The target system is: Android - 28 - armv7-a
+      The host system is: Linux - 6.18.5 - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:32 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is Clang, found in:
+        /workspace/build-android-arm32/CMakeFiles/3.28.3/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:32 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is Clang, found in:
+        /workspace/build-android-arm32/CMakeFiles/3.28.3/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:32 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-kdZllF"
+      binary: "/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-kdZllF"
+    cmakeVariables:
+      CMAKE_ANDROID_STL_TYPE: "c++_static"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_CXX_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_C_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_C_COMPILER_TARGET: "armv7-none-linux-androideabi28"
+      CMAKE_C_FLAGS: "-DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -fexceptions"
+      CMAKE_C_FLAGS_DEBUG: "-g  -fno-limit-debug-info"
+      CMAKE_EXE_LINKER_FLAGS: "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections"
+      CMAKE_MODULE_PATH: "/workspace/framework/delibs/cmake"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-kdZllF'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_cf836/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_cf836.dir/build.make CMakeFiles/cmTC_cf836.dir/build
+        gmake[1]: Entering directory '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-kdZllF'
+        Building C object CMakeFiles/cmTC_cf836.dir/CMakeCCompilerABI.c.o
+        /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=armv7-none-linux-androideabi28   -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -fexceptions  -O2 -g -DNDEBUG   -v -MD -MT CMakeFiles/cmTC_cf836.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_cf836.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_cf836.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c
+        Android (12470979, +pgo, +bolt, +lto, +mlgo, based on r522817c) clang version 18.0.3 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262)
+        Target: armv7-none-linux-android28
+        Thread model: posix
+        InstalledDir: /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin
+         (in-process)
+         "/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang" -cc1 -triple thumbv7-none-linux-android28 -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=1 -target-cpu generic -target-feature +soft-float-abi -target-feature +vfp2 -target-feature +vfp2sp -target-feature +vfp3 -target-feature +vfp3d16 -target-feature +vfp3d16sp -target-feature +vfp3sp -target-feature -fp16 -target-feature -vfp4 -target-feature -vfp4d16 -target-feature -vfp4d16sp -target-feature -vfp4sp -target-feature -fp-armv8 -target-feature -fp-armv8d16 -target-feature -fp-armv8d16sp -target-feature -fp-armv8sp -target-feature -fullfp16 -target-feature +fp64 -target-feature +d32 -target-feature +neon -target-feature -sha2 -target-feature -aes -target-feature -fp16fml -target-abi aapcs-linux -mfloat-abi soft -debug-info-kind=constructor -dwarf-version=4 -debugger-tuning=gdb -fdebug-compilation-dir=/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-kdZllF -v -ffunction-sections -fdata-sections -fcoverage-compilation-dir=/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-kdZllF -resource-dir /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18 -dependency-file CMakeFiles/cmTC_cf836.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_cf836.dir/CMakeCCompilerABI.c.o -sys-header-deps -D ANDROID -D _FORTIFY_SOURCE=2 -D NDEBUG -internal-isystem /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include -internal-isystem /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/local/include -internal-externc-isystem /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/arm-linux-androideabi -internal-externc-isystem /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/include -internal-externc-isystem /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include -O2 -Wformat -ferror-limit 19 -femulated-tls -stack-protector 2 -fno-signed-char -fgnuc-version=4.2.1 -fexceptions -vectorize-loops -vectorize-slp -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_cf836.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c
+        clang -cc1 version 18.0.3 based upon LLVM 18.0.3 default target x86_64-unknown-linux-gnu
+        ignoring nonexistent directory "/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/local/include"
+        ignoring nonexistent directory "/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include
+         /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/arm-linux-androideabi
+         /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include
+        End of search list.
+        Linking C executable cmTC_cf836
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cf836.dir/link.txt --verbose=1
+        /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=armv7-none-linux-androideabi28 -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -fexceptions  -O2 -g -DNDEBUG -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections -v CMakeFiles/cmTC_cf836.dir/CMakeCCompilerABI.c.o -o cmTC_cf836   -latomic -lm 
+        Android (12470979, +pgo, +bolt, +lto, +mlgo, based on r522817c) clang version 18.0.3 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262)
+        Target: armv7-none-linux-android28
+        Thread model: posix
+        InstalledDir: /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin
+         "/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/ld.lld" -EL -z now -z relro -z max-page-size=4096 -X --hash-style=gnu --eh-frame-hdr -m armelf_linux_eabi -pie -dynamic-linker /system/bin/linker -o cmTC_cf836 /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi/28/crtbegin_dynamic.o -L/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/arm -L/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi/28 -L/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi -L/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/../lib -L/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib --build-id=sha1 --no-rosegment --no-undefined-version --fatal-warnings --gc-sections --no-undefined --gc-sections CMakeFiles/cmTC_cf836.dir/CMakeCCompilerABI.c.o -latomic -lm /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-arm-android.a -l:libunwind.a -ldl -lc /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-arm-android.a -l:libunwind.a -ldl /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi/28/crtend_android.o
+        gmake[1]: Leaving directory '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-kdZllF'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:32 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include]
+          add: [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/arm-linux-androideabi]
+          add: [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include]
+        end of search list found
+        collapse include dir [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include] ==> [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include]
+        collapse include dir [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/arm-linux-androideabi] ==> [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/arm-linux-androideabi]
+        collapse include dir [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include] ==> [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include]
+        implicit include dirs: [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include;/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/arm-linux-androideabi;/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:159 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:32 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld\\.lld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-kdZllF']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_cf836/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_cf836.dir/build.make CMakeFiles/cmTC_cf836.dir/build]
+        ignore line: [gmake[1]: Entering directory '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-kdZllF']
+        ignore line: [Building C object CMakeFiles/cmTC_cf836.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=armv7-none-linux-androideabi28   -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -fexceptions  -O2 -g -DNDEBUG   -v -MD -MT CMakeFiles/cmTC_cf836.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_cf836.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_cf836.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
+        ignore line: [Android (12470979  +pgo  +bolt  +lto  +mlgo  based on r522817c) clang version 18.0.3 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262)]
+        ignore line: [Target: armv7-none-linux-android28]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin]
+        ignore line: [ (in-process)]
+        ignore line: [ "/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang" -cc1 -triple thumbv7-none-linux-android28 -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=1 -target-cpu generic -target-feature +soft-float-abi -target-feature +vfp2 -target-feature +vfp2sp -target-feature +vfp3 -target-feature +vfp3d16 -target-feature +vfp3d16sp -target-feature +vfp3sp -target-feature -fp16 -target-feature -vfp4 -target-feature -vfp4d16 -target-feature -vfp4d16sp -target-feature -vfp4sp -target-feature -fp-armv8 -target-feature -fp-armv8d16 -target-feature -fp-armv8d16sp -target-feature -fp-armv8sp -target-feature -fullfp16 -target-feature +fp64 -target-feature +d32 -target-feature +neon -target-feature -sha2 -target-feature -aes -target-feature -fp16fml -target-abi aapcs-linux -mfloat-abi soft -debug-info-kind=constructor -dwarf-version=4 -debugger-tuning=gdb -fdebug-compilation-dir=/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-kdZllF -v -ffunction-sections -fdata-sections -fcoverage-compilation-dir=/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-kdZllF -resource-dir /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18 -dependency-file CMakeFiles/cmTC_cf836.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_cf836.dir/CMakeCCompilerABI.c.o -sys-header-deps -D ANDROID -D _FORTIFY_SOURCE=2 -D NDEBUG -internal-isystem /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include -internal-isystem /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/local/include -internal-externc-isystem /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/arm-linux-androideabi -internal-externc-isystem /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/include -internal-externc-isystem /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include -O2 -Wformat -ferror-limit 19 -femulated-tls -stack-protector 2 -fno-signed-char -fgnuc-version=4.2.1 -fexceptions -vectorize-loops -vectorize-slp -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_cf836.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
+        ignore line: [clang -cc1 version 18.0.3 based upon LLVM 18.0.3 default target x86_64-unknown-linux-gnu]
+        ignore line: [ignoring nonexistent directory "/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/local/include"]
+        ignore line: [ignoring nonexistent directory "/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include]
+        ignore line: [ /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/arm-linux-androideabi]
+        ignore line: [ /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Linking C executable cmTC_cf836]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cf836.dir/link.txt --verbose=1]
+        ignore line: [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=armv7-none-linux-androideabi28 -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -fexceptions  -O2 -g -DNDEBUG -Wl --build-id=sha1 -Wl --no-rosegment -Wl --no-undefined-version -Wl --fatal-warnings -Wl --gc-sections -Qunused-arguments -Wl --no-undefined  -Wl --gc-sections -v CMakeFiles/cmTC_cf836.dir/CMakeCCompilerABI.c.o -o cmTC_cf836   -latomic -lm ]
+        ignore line: [Android (12470979  +pgo  +bolt  +lto  +mlgo  based on r522817c) clang version 18.0.3 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262)]
+        ignore line: [Target: armv7-none-linux-android28]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin]
+        link line: [ "/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/ld.lld" -EL -z now -z relro -z max-page-size=4096 -X --hash-style=gnu --eh-frame-hdr -m armelf_linux_eabi -pie -dynamic-linker /system/bin/linker -o cmTC_cf836 /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi/28/crtbegin_dynamic.o -L/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/arm -L/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi/28 -L/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi -L/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/../lib -L/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib --build-id=sha1 --no-rosegment --no-undefined-version --fatal-warnings --gc-sections --no-undefined --gc-sections CMakeFiles/cmTC_cf836.dir/CMakeCCompilerABI.c.o -latomic -lm /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-arm-android.a -l:libunwind.a -ldl -lc /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-arm-android.a -l:libunwind.a -ldl /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi/28/crtend_android.o]
+          arg [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/ld.lld] ==> ignore
+          arg [-EL] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [-zmax-page-size=4096] ==> ignore
+          arg [-X] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [armelf_linux_eabi] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/system/bin/linker] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_cf836] ==> ignore
+          arg [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi/28/crtbegin_dynamic.o] ==> obj [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi/28/crtbegin_dynamic.o]
+          arg [-L/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/arm] ==> dir [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/arm]
+          arg [-L/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi/28] ==> dir [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi/28]
+          arg [-L/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi] ==> dir [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi]
+          arg [-L/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/../lib] ==> dir [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/../lib]
+          arg [-L/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib] ==> dir [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib]
+          arg [--build-id=sha1] ==> ignore
+          arg [--no-rosegment] ==> ignore
+          arg [--no-undefined-version] ==> ignore
+          arg [--fatal-warnings] ==> ignore
+          arg [--gc-sections] ==> ignore
+          arg [--no-undefined] ==> ignore
+          arg [--gc-sections] ==> ignore
+          arg [CMakeFiles/cmTC_cf836.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-latomic] ==> lib [atomic]
+          arg [-lm] ==> lib [m]
+          arg [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-arm-android.a] ==> lib [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-arm-android.a]
+          arg [-l:libunwind.a] ==> lib [-l:libunwind.a]
+          arg [-ldl] ==> lib [dl]
+          arg [-lc] ==> lib [c]
+          arg [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-arm-android.a] ==> lib [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-arm-android.a]
+          arg [-l:libunwind.a] ==> lib [-l:libunwind.a]
+          arg [-ldl] ==> lib [dl]
+          arg [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi/28/crtend_android.o] ==> obj [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi/28/crtend_android.o]
+        remove lib [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-arm-android.a]
+        remove lib [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-arm-android.a]
+        collapse obj [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi/28/crtbegin_dynamic.o] ==> [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi/28/crtbegin_dynamic.o]
+        collapse obj [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi/28/crtend_android.o] ==> [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi/28/crtend_android.o]
+        collapse library dir [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/arm] ==> [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/arm]
+        collapse library dir [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi/28] ==> [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi/28]
+        collapse library dir [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi] ==> [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi]
+        collapse library dir [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/../lib] ==> [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib]
+        collapse library dir [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib] ==> [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib]
+        implicit libs: [atomic;m;-l:libunwind.a;dl;c;-l:libunwind.a;dl]
+        implicit objs: [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi/28/crtbegin_dynamic.o;/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi/28/crtend_android.o]
+        implicit dirs: [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/arm;/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi/28;/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi;/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:32 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-MjApIU"
+      binary: "/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-MjApIU"
+    cmakeVariables:
+      CMAKE_ANDROID_STL_TYPE: "c++_static"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_CXX_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_CXX_COMPILER_TARGET: "armv7-none-linux-androideabi28"
+      CMAKE_CXX_FLAGS: "-DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -fexceptions -frtti -stdlib=libc++"
+      CMAKE_CXX_FLAGS_DEBUG: "-g  -fno-limit-debug-info"
+      CMAKE_C_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_C_COMPILER_TARGET: "armv7-none-linux-androideabi28"
+      CMAKE_EXE_LINKER_FLAGS: "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections"
+      CMAKE_MODULE_PATH: "/workspace/framework/delibs/cmake"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-MjApIU'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c03c7/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_c03c7.dir/build.make CMakeFiles/cmTC_c03c7.dir/build
+        gmake[1]: Entering directory '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-MjApIU'
+        Building CXX object CMakeFiles/cmTC_c03c7.dir/CMakeCXXCompilerABI.cpp.o
+        /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi28   -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -fexceptions -frtti -stdlib=libc++  -O2 -g -DNDEBUG   -v -MD -MT CMakeFiles/cmTC_c03c7.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_c03c7.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_c03c7.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        Android (12470979, +pgo, +bolt, +lto, +mlgo, based on r522817c) clang version 18.0.3 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262)
+        Target: armv7-none-linux-android28
+        Thread model: posix
+        InstalledDir: /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin
+         (in-process)
+         "/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++" -cc1 -triple thumbv7-none-linux-android28 -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=1 -target-cpu generic -target-feature +soft-float-abi -target-feature +vfp2 -target-feature +vfp2sp -target-feature +vfp3 -target-feature +vfp3d16 -target-feature +vfp3d16sp -target-feature +vfp3sp -target-feature -fp16 -target-feature -vfp4 -target-feature -vfp4d16 -target-feature -vfp4d16sp -target-feature -vfp4sp -target-feature -fp-armv8 -target-feature -fp-armv8d16 -target-feature -fp-armv8d16sp -target-feature -fp-armv8sp -target-feature -fullfp16 -target-feature +fp64 -target-feature +d32 -target-feature +neon -target-feature -sha2 -target-feature -aes -target-feature -fp16fml -target-abi aapcs-linux -mfloat-abi soft -debug-info-kind=constructor -dwarf-version=4 -debugger-tuning=gdb -fdebug-compilation-dir=/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-MjApIU -v -ffunction-sections -fdata-sections -fcoverage-compilation-dir=/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-MjApIU -resource-dir /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18 -dependency-file CMakeFiles/cmTC_c03c7.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_c03c7.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -D ANDROID -D _FORTIFY_SOURCE=2 -D NDEBUG -internal-isystem /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/c++/v1 -internal-isystem /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include -internal-isystem /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/local/include -internal-externc-isystem /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/arm-linux-androideabi -internal-externc-isystem /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/include -internal-externc-isystem /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include -O2 -Wformat -fdeprecated-macro -ferror-limit 19 -femulated-tls -stack-protector 2 -fno-signed-char -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -vectorize-loops -vectorize-slp -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_c03c7.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        clang -cc1 version 18.0.3 based upon LLVM 18.0.3 default target x86_64-unknown-linux-gnu
+        ignoring nonexistent directory "/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/local/include"
+        ignoring nonexistent directory "/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/c++/v1
+         /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include
+         /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/arm-linux-androideabi
+         /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include
+        End of search list.
+        Linking CXX executable cmTC_c03c7
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c03c7.dir/link.txt --verbose=1
+        /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi28 -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -fexceptions -frtti -stdlib=libc++  -O2 -g -DNDEBUG -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections -v CMakeFiles/cmTC_c03c7.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_c03c7   -static-libstdc++ -latomic -lm 
+        Android (12470979, +pgo, +bolt, +lto, +mlgo, based on r522817c) clang version 18.0.3 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262)
+        Target: armv7-none-linux-android28
+        Thread model: posix
+        InstalledDir: /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin
+         "/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/ld.lld" -EL -z now -z relro -z max-page-size=4096 -X --hash-style=gnu --eh-frame-hdr -m armelf_linux_eabi -pie -dynamic-linker /system/bin/linker -o cmTC_c03c7 /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi/28/crtbegin_dynamic.o -L/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/arm -L/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi/28 -L/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi -L/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/../lib -L/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib --build-id=sha1 --no-rosegment --no-undefined-version --fatal-warnings --gc-sections --no-undefined --gc-sections CMakeFiles/cmTC_c03c7.dir/CMakeCXXCompilerABI.cpp.o -latomic -lm -Bstatic -lc++ -Bdynamic -lm /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-arm-android.a -l:libunwind.a -ldl -lc /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-arm-android.a -l:libunwind.a -ldl /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi/28/crtend_android.o
+        gmake[1]: Leaving directory '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-MjApIU'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:32 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/c++/v1]
+          add: [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include]
+          add: [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/arm-linux-androideabi]
+          add: [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include]
+        end of search list found
+        collapse include dir [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/c++/v1] ==> [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1]
+        collapse include dir [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include] ==> [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include]
+        collapse include dir [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/arm-linux-androideabi] ==> [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/arm-linux-androideabi]
+        collapse include dir [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include] ==> [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include]
+        implicit include dirs: [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1;/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include;/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/arm-linux-androideabi;/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:159 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:32 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld\\.lld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-MjApIU']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c03c7/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_c03c7.dir/build.make CMakeFiles/cmTC_c03c7.dir/build]
+        ignore line: [gmake[1]: Entering directory '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-MjApIU']
+        ignore line: [Building CXX object CMakeFiles/cmTC_c03c7.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi28   -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -fexceptions -frtti -stdlib=libc++  -O2 -g -DNDEBUG   -v -MD -MT CMakeFiles/cmTC_c03c7.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_c03c7.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_c03c7.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Android (12470979  +pgo  +bolt  +lto  +mlgo  based on r522817c) clang version 18.0.3 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262)]
+        ignore line: [Target: armv7-none-linux-android28]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin]
+        ignore line: [ (in-process)]
+        ignore line: [ "/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++" -cc1 -triple thumbv7-none-linux-android28 -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=1 -target-cpu generic -target-feature +soft-float-abi -target-feature +vfp2 -target-feature +vfp2sp -target-feature +vfp3 -target-feature +vfp3d16 -target-feature +vfp3d16sp -target-feature +vfp3sp -target-feature -fp16 -target-feature -vfp4 -target-feature -vfp4d16 -target-feature -vfp4d16sp -target-feature -vfp4sp -target-feature -fp-armv8 -target-feature -fp-armv8d16 -target-feature -fp-armv8d16sp -target-feature -fp-armv8sp -target-feature -fullfp16 -target-feature +fp64 -target-feature +d32 -target-feature +neon -target-feature -sha2 -target-feature -aes -target-feature -fp16fml -target-abi aapcs-linux -mfloat-abi soft -debug-info-kind=constructor -dwarf-version=4 -debugger-tuning=gdb -fdebug-compilation-dir=/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-MjApIU -v -ffunction-sections -fdata-sections -fcoverage-compilation-dir=/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-MjApIU -resource-dir /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18 -dependency-file CMakeFiles/cmTC_c03c7.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_c03c7.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -D ANDROID -D _FORTIFY_SOURCE=2 -D NDEBUG -internal-isystem /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/c++/v1 -internal-isystem /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include -internal-isystem /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/local/include -internal-externc-isystem /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/arm-linux-androideabi -internal-externc-isystem /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/include -internal-externc-isystem /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include -O2 -Wformat -fdeprecated-macro -ferror-limit 19 -femulated-tls -stack-protector 2 -fno-signed-char -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -vectorize-loops -vectorize-slp -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_c03c7.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [clang -cc1 version 18.0.3 based upon LLVM 18.0.3 default target x86_64-unknown-linux-gnu]
+        ignore line: [ignoring nonexistent directory "/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/local/include"]
+        ignore line: [ignoring nonexistent directory "/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/c++/v1]
+        ignore line: [ /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include]
+        ignore line: [ /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/arm-linux-androideabi]
+        ignore line: [ /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Linking CXX executable cmTC_c03c7]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c03c7.dir/link.txt --verbose=1]
+        ignore line: [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi28 -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -fexceptions -frtti -stdlib=libc++  -O2 -g -DNDEBUG -Wl --build-id=sha1 -Wl --no-rosegment -Wl --no-undefined-version -Wl --fatal-warnings -Wl --gc-sections -Qunused-arguments -Wl --no-undefined  -Wl --gc-sections -v CMakeFiles/cmTC_c03c7.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_c03c7   -static-libstdc++ -latomic -lm ]
+        ignore line: [Android (12470979  +pgo  +bolt  +lto  +mlgo  based on r522817c) clang version 18.0.3 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262)]
+        ignore line: [Target: armv7-none-linux-android28]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin]
+        link line: [ "/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/ld.lld" -EL -z now -z relro -z max-page-size=4096 -X --hash-style=gnu --eh-frame-hdr -m armelf_linux_eabi -pie -dynamic-linker /system/bin/linker -o cmTC_c03c7 /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi/28/crtbegin_dynamic.o -L/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/arm -L/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi/28 -L/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi -L/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/../lib -L/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib --build-id=sha1 --no-rosegment --no-undefined-version --fatal-warnings --gc-sections --no-undefined --gc-sections CMakeFiles/cmTC_c03c7.dir/CMakeCXXCompilerABI.cpp.o -latomic -lm -Bstatic -lc++ -Bdynamic -lm /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-arm-android.a -l:libunwind.a -ldl -lc /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-arm-android.a -l:libunwind.a -ldl /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi/28/crtend_android.o]
+          arg [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/ld.lld] ==> ignore
+          arg [-EL] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [-zmax-page-size=4096] ==> ignore
+          arg [-X] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [armelf_linux_eabi] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/system/bin/linker] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_c03c7] ==> ignore
+          arg [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi/28/crtbegin_dynamic.o] ==> obj [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi/28/crtbegin_dynamic.o]
+          arg [-L/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/arm] ==> dir [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/arm]
+          arg [-L/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi/28] ==> dir [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi/28]
+          arg [-L/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi] ==> dir [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi]
+          arg [-L/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/../lib] ==> dir [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/../lib]
+          arg [-L/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib] ==> dir [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib]
+          arg [--build-id=sha1] ==> ignore
+          arg [--no-rosegment] ==> ignore
+          arg [--no-undefined-version] ==> ignore
+          arg [--fatal-warnings] ==> ignore
+          arg [--gc-sections] ==> ignore
+          arg [--no-undefined] ==> ignore
+          arg [--gc-sections] ==> ignore
+          arg [CMakeFiles/cmTC_c03c7.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-latomic] ==> lib [atomic]
+          arg [-lm] ==> lib [m]
+          arg [-Bstatic] ==> search static
+          arg [-lc++] ==> lib [c++]
+          arg [-Bdynamic] ==> search dynamic
+          arg [-lm] ==> lib [m]
+          arg [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-arm-android.a] ==> lib [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-arm-android.a]
+          arg [-l:libunwind.a] ==> lib [-l:libunwind.a]
+          arg [-ldl] ==> lib [dl]
+          arg [-lc] ==> lib [c]
+          arg [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-arm-android.a] ==> lib [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-arm-android.a]
+          arg [-l:libunwind.a] ==> lib [-l:libunwind.a]
+          arg [-ldl] ==> lib [dl]
+          arg [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi/28/crtend_android.o] ==> obj [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi/28/crtend_android.o]
+        remove lib [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-arm-android.a]
+        remove lib [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/libclang_rt.builtins-arm-android.a]
+        collapse obj [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi/28/crtbegin_dynamic.o] ==> [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi/28/crtbegin_dynamic.o]
+        collapse obj [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi/28/crtend_android.o] ==> [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi/28/crtend_android.o]
+        collapse library dir [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/arm] ==> [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/arm]
+        collapse library dir [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi/28] ==> [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi/28]
+        collapse library dir [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/arm-linux-androideabi] ==> [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi]
+        collapse library dir [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib/../lib] ==> [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib]
+        collapse library dir [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/lib] ==> [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib]
+        implicit libs: [atomic;m;c++;m;-l:libunwind.a;dl;c;-l:libunwind.a;dl]
+        implicit objs: [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi/28/crtbegin_dynamic.o;/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi/28/crtend_android.o]
+        implicit dirs: [/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/lib/linux/arm;/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi/28;/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi;/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "framework/delibs/cmake/Defs.cmake:194 (check_c_source_compiles)"
+      - "framework/delibs/cmake/Defs.cmake:214 (check_fenv_access_support)"
+      - "CMakeLists.txt:34 (include)"
+    checks:
+      - "Performing Test HAVE_FENV_ACCESS"
+    directories:
+      source: "/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-swIML3"
+      binary: "/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-swIML3"
+    cmakeVariables:
+      CMAKE_ANDROID_STL_TYPE: "c++_static"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_CXX_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_CXX_COMPILER_TARGET: "armv7-none-linux-androideabi28"
+      CMAKE_C_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_C_COMPILER_TARGET: "armv7-none-linux-androideabi28"
+      CMAKE_C_FLAGS: "-DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions"
+      CMAKE_C_FLAGS_DEBUG: "-g  -fno-limit-debug-info"
+      CMAKE_EXE_LINKER_FLAGS: "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections"
+      CMAKE_MODULE_PATH: "/workspace/framework/delibs/cmake"
+    buildResult:
+      variable: "HAVE_FENV_ACCESS"
+      cached: true
+      stdout: |
+        Change Dir: '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-swIML3'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_85391/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_85391.dir/build.make CMakeFiles/cmTC_85391.dir/build
+        gmake[1]: Entering directory '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-swIML3'
+        Building C object CMakeFiles/cmTC_85391.dir/src.c.o
+        /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=armv7-none-linux-androideabi28 -DHAVE_FENV_ACCESS  -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -Wall -O2 -g -DNDEBUG -MD -MT CMakeFiles/cmTC_85391.dir/src.c.o -MF CMakeFiles/cmTC_85391.dir/src.c.o.d -o CMakeFiles/cmTC_85391.dir/src.c.o -c /workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-swIML3/src.c
+        /workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-swIML3/src.c:3:1: warning: '#pragma FENV_ACCESS' is not supported on this target - ignored [-Wignored-pragmas]
+            3 | _Pragma("STDC FENV_ACCESS ON")
+              | ^
+        <scratch space>:8:7: note: expanded from here
+            8 |  STDC FENV_ACCESS ON
+              |       ^
+        1 warning generated.
+        Linking C executable cmTC_85391
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_85391.dir/link.txt --verbose=1
+        /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=armv7-none-linux-androideabi28 -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -Wall -O2 -g -DNDEBUG -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections  CMakeFiles/cmTC_85391.dir/src.c.o -o cmTC_85391   -latomic -lm 
+        gmake[1]: Leaving directory '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-swIML3'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/usr/share/cmake-3.28/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "external/glslang/src/glslang/CMakeLists.txt:203 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-3rFeyd"
+      binary: "/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-3rFeyd"
+    cmakeVariables:
+      CMAKE_ANDROID_STL_TYPE: "c++_static"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_CXX_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_CXX_COMPILER_TARGET: "armv7-none-linux-androideabi28"
+      CMAKE_C_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_C_COMPILER_TARGET: "armv7-none-linux-androideabi28"
+      CMAKE_C_FLAGS: " -Wall -Wextra -Wno-long-long -Wshadow -Wundef -Wconversion -Wno-sign-conversion -Wno-missing-field-initializers -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -pedantic  -fwrapv -fvisibility=hidden  -w"
+      CMAKE_C_FLAGS_DEBUG: "-g  -fno-limit-debug-info"
+      CMAKE_EXE_LINKER_FLAGS: "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections"
+      CMAKE_MODULE_PATH: "/workspace/framework/delibs/cmake"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-3rFeyd'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_1249b/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_1249b.dir/build.make CMakeFiles/cmTC_1249b.dir/build
+        gmake[1]: Entering directory '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-3rFeyd'
+        Building C object CMakeFiles/cmTC_1249b.dir/src.c.o
+        /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=armv7-none-linux-androideabi28 -DCMAKE_HAVE_LIBC_PTHREAD  -Wall -Wextra -Wno-long-long -Wshadow -Wundef -Wconversion -Wno-sign-conversion -Wno-missing-field-initializers -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -pedantic  -fwrapv -fvisibility=hidden  -w -Wall -O2 -g -DNDEBUG -std=gnu99 -MD -MT CMakeFiles/cmTC_1249b.dir/src.c.o -MF CMakeFiles/cmTC_1249b.dir/src.c.o.d -o CMakeFiles/cmTC_1249b.dir/src.c.o -c /workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-3rFeyd/src.c
+        /workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-3rFeyd/src.c:13:3: error: call to undeclared function 'pthread_cancel'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+           13 |   pthread_cancel(thread);
+              |   ^
+        /workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-3rFeyd/src.c:13:3: note: did you mean 'pthread_once'?
+        /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/pthread.h:264:5: note: 'pthread_once' declared here
+          264 | int pthread_once(pthread_once_t* _Nonnull __once, void (* _Nonnull __init_routine)(void));
+              |     ^
+        1 error generated.
+        gmake[1]: *** [CMakeFiles/cmTC_1249b.dir/build.make:79: CMakeFiles/cmTC_1249b.dir/src.c.o] Error 1
+        gmake[1]: Leaving directory '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-3rFeyd'
+        gmake: *** [Makefile:127: cmTC_1249b/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/FindThreads.cmake:136 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindThreads.cmake:169 (_threads_check_flag_pthread)"
+      - "external/glslang/src/glslang/CMakeLists.txt:203 (find_package)"
+    checks:
+      - "Check if compiler accepts -pthread"
+    directories:
+      source: "/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-WOJz3D"
+      binary: "/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-WOJz3D"
+    cmakeVariables:
+      CMAKE_ANDROID_STL_TYPE: "c++_static"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_CXX_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_CXX_COMPILER_TARGET: "armv7-none-linux-androideabi28"
+      CMAKE_C_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_C_COMPILER_TARGET: "armv7-none-linux-androideabi28"
+      CMAKE_C_FLAGS: " -Wall -Wextra -Wno-long-long -Wshadow -Wundef -Wconversion -Wno-sign-conversion -Wno-missing-field-initializers -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -pedantic  -fwrapv -fvisibility=hidden  -w"
+      CMAKE_C_FLAGS_DEBUG: "-g  -fno-limit-debug-info"
+      CMAKE_EXE_LINKER_FLAGS: "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections"
+      CMAKE_MODULE_PATH: "/workspace/framework/delibs/cmake"
+    buildResult:
+      variable: "THREADS_HAVE_PTHREAD_ARG"
+      cached: true
+      stdout: |
+        Change Dir: '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-WOJz3D'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8c682/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_8c682.dir/build.make CMakeFiles/cmTC_8c682.dir/build
+        gmake[1]: Entering directory '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-WOJz3D'
+        Building C object CMakeFiles/cmTC_8c682.dir/CheckForPthreads.c.o
+        /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=armv7-none-linux-androideabi28   -Wall -Wextra -Wno-long-long -Wshadow -Wundef -Wconversion -Wno-sign-conversion -Wno-missing-field-initializers -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -pedantic  -fwrapv -fvisibility=hidden  -w  -O2 -g -DNDEBUG -std=gnu99 -MD -MT CMakeFiles/cmTC_8c682.dir/CheckForPthreads.c.o -MF CMakeFiles/cmTC_8c682.dir/CheckForPthreads.c.o.d -o CMakeFiles/cmTC_8c682.dir/CheckForPthreads.c.o -c /workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-WOJz3D/CheckForPthreads.c
+        Linking C executable cmTC_8c682
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8c682.dir/link.txt --verbose=1
+        /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=armv7-none-linux-androideabi28  -Wall -Wextra -Wno-long-long -Wshadow -Wundef -Wconversion -Wno-sign-conversion -Wno-missing-field-initializers -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -pedantic  -fwrapv -fvisibility=hidden  -w  -O2 -g -DNDEBUG -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections  CMakeFiles/cmTC_8c682.dir/CheckForPthreads.c.o -o cmTC_8c682  -pthread  -latomic -lm 
+        gmake[1]: Leaving directory '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-WOJz3D'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckIncludeFileCXX.cmake:89 (try_compile)"
+      - "external/jsoncpp/src/src/lib_json/CMakeLists.txt:11 (check_include_file_cxx)"
+    checks:
+      - "Looking for C++ include clocale"
+    directories:
+      source: "/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-6kqgC4"
+      binary: "/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-6kqgC4"
+    cmakeVariables:
+      CMAKE_ANDROID_STL_TYPE: "c++_static"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_CXX_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_CXX_COMPILER_TARGET: "armv7-none-linux-androideabi28"
+      CMAKE_CXX_FLAGS: " -Wall -Wextra -Wno-long-long -Wshadow -Wundef -Wconversion -Wno-sign-conversion -Wno-missing-field-initializers -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++ -fwrapv -fvisibility=hidden -fvisibility-inlines-hidden"
+      CMAKE_CXX_FLAGS_DEBUG: "-g  -fno-limit-debug-info"
+      CMAKE_C_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_C_COMPILER_TARGET: "armv7-none-linux-androideabi28"
+      CMAKE_EXE_LINKER_FLAGS: "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections"
+      CMAKE_MODULE_PATH: "/workspace/framework/delibs/cmake;/workspace/external/jsoncpp/cmake"
+    buildResult:
+      variable: "HAVE_CLOCALE"
+      cached: true
+      stdout: |
+        Change Dir: '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-6kqgC4'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c3ef1/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_c3ef1.dir/build.make CMakeFiles/cmTC_c3ef1.dir/build
+        gmake[1]: Entering directory '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-6kqgC4'
+        Building CXX object CMakeFiles/cmTC_c3ef1.dir/CheckIncludeFile.cxx.o
+        /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi28   -Wall -Wextra -Wno-long-long -Wshadow -Wundef -Wconversion -Wno-sign-conversion -Wno-missing-field-initializers -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++ -fwrapv -fvisibility=hidden -fvisibility-inlines-hidden -Wall -O2 -g -DNDEBUG -std=c++11 -MD -MT CMakeFiles/cmTC_c3ef1.dir/CheckIncludeFile.cxx.o -MF CMakeFiles/cmTC_c3ef1.dir/CheckIncludeFile.cxx.o.d -o CMakeFiles/cmTC_c3ef1.dir/CheckIncludeFile.cxx.o -c /workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-6kqgC4/CheckIncludeFile.cxx
+        Linking CXX executable cmTC_c3ef1
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c3ef1.dir/link.txt --verbose=1
+        /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi28  -Wall -Wextra -Wno-long-long -Wshadow -Wundef -Wconversion -Wno-sign-conversion -Wno-missing-field-initializers -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++ -fwrapv -fvisibility=hidden -fvisibility-inlines-hidden -Wall -O2 -g -DNDEBUG -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections  CMakeFiles/cmTC_c3ef1.dir/CheckIncludeFile.cxx.o -o cmTC_c3ef1   -static-libstdc++ -latomic -lm 
+        gmake[1]: Leaving directory '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-6kqgC4'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:140 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXSymbolExists.cmake:72 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/jsoncpp/src/src/lib_json/CMakeLists.txt:12 (check_cxx_symbol_exists)"
+    checks:
+      - "Looking for localeconv"
+    directories:
+      source: "/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-43zoo2"
+      binary: "/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-43zoo2"
+    cmakeVariables:
+      CMAKE_ANDROID_STL_TYPE: "c++_static"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_CXX_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_CXX_COMPILER_TARGET: "armv7-none-linux-androideabi28"
+      CMAKE_CXX_FLAGS: " -Wall -Wextra -Wno-long-long -Wshadow -Wundef -Wconversion -Wno-sign-conversion -Wno-missing-field-initializers -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++ -fwrapv -fvisibility=hidden -fvisibility-inlines-hidden"
+      CMAKE_CXX_FLAGS_DEBUG: "-g  -fno-limit-debug-info"
+      CMAKE_C_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_C_COMPILER_TARGET: "armv7-none-linux-androideabi28"
+      CMAKE_EXE_LINKER_FLAGS: "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections"
+      CMAKE_MODULE_PATH: "/workspace/framework/delibs/cmake;/workspace/external/jsoncpp/cmake"
+    buildResult:
+      variable: "HAVE_LOCALECONV"
+      cached: true
+      stdout: |
+        Change Dir: '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-43zoo2'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f940c/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_f940c.dir/build.make CMakeFiles/cmTC_f940c.dir/build
+        gmake[1]: Entering directory '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-43zoo2'
+        Building CXX object CMakeFiles/cmTC_f940c.dir/CheckSymbolExists.cxx.o
+        /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi28   -Wall -Wextra -Wno-long-long -Wshadow -Wundef -Wconversion -Wno-sign-conversion -Wno-missing-field-initializers -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++ -fwrapv -fvisibility=hidden -fvisibility-inlines-hidden -Wall -O2 -g -DNDEBUG -std=c++11 -MD -MT CMakeFiles/cmTC_f940c.dir/CheckSymbolExists.cxx.o -MF CMakeFiles/cmTC_f940c.dir/CheckSymbolExists.cxx.o.d -o CMakeFiles/cmTC_f940c.dir/CheckSymbolExists.cxx.o -c /workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-43zoo2/CheckSymbolExists.cxx
+        Linking CXX executable cmTC_f940c
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f940c.dir/link.txt --verbose=1
+        /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi28  -Wall -Wextra -Wno-long-long -Wshadow -Wundef -Wconversion -Wno-sign-conversion -Wno-missing-field-initializers -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++ -fwrapv -fvisibility=hidden -fvisibility-inlines-hidden -Wall -O2 -g -DNDEBUG -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections  CMakeFiles/cmTC_f940c.dir/CheckSymbolExists.cxx.o -o cmTC_f940c   -static-libstdc++ -latomic -lm 
+        gmake[1]: Leaving directory '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-43zoo2'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckIncludeFileCXX.cmake:89 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckTypeSize.cmake:254 (check_include_file_cxx)"
+      - "external/jsoncpp/src/src/lib_json/CMakeLists.txt:15 (check_type_size)"
+    checks:
+      - "Looking for C++ include sys/types.h"
+    directories:
+      source: "/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-1w7FqD"
+      binary: "/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-1w7FqD"
+    cmakeVariables:
+      CMAKE_ANDROID_STL_TYPE: "c++_static"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_CXX_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_CXX_COMPILER_TARGET: "armv7-none-linux-androideabi28"
+      CMAKE_CXX_FLAGS: " -Wall -Wextra -Wno-long-long -Wshadow -Wundef -Wconversion -Wno-sign-conversion -Wno-missing-field-initializers -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++ -fwrapv -fvisibility=hidden -fvisibility-inlines-hidden"
+      CMAKE_CXX_FLAGS_DEBUG: "-g  -fno-limit-debug-info"
+      CMAKE_C_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_C_COMPILER_TARGET: "armv7-none-linux-androideabi28"
+      CMAKE_EXE_LINKER_FLAGS: "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections"
+      CMAKE_MODULE_PATH: "/workspace/framework/delibs/cmake;/workspace/external/jsoncpp/cmake"
+    buildResult:
+      variable: "HAVE_SYS_TYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-1w7FqD'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f21e6/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_f21e6.dir/build.make CMakeFiles/cmTC_f21e6.dir/build
+        gmake[1]: Entering directory '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-1w7FqD'
+        Building CXX object CMakeFiles/cmTC_f21e6.dir/CheckIncludeFile.cxx.o
+        /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi28   -Wall -Wextra -Wno-long-long -Wshadow -Wundef -Wconversion -Wno-sign-conversion -Wno-missing-field-initializers -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++ -fwrapv -fvisibility=hidden -fvisibility-inlines-hidden -Wall -O2 -g -DNDEBUG -std=c++11 -MD -MT CMakeFiles/cmTC_f21e6.dir/CheckIncludeFile.cxx.o -MF CMakeFiles/cmTC_f21e6.dir/CheckIncludeFile.cxx.o.d -o CMakeFiles/cmTC_f21e6.dir/CheckIncludeFile.cxx.o -c /workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-1w7FqD/CheckIncludeFile.cxx
+        Linking CXX executable cmTC_f21e6
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f21e6.dir/link.txt --verbose=1
+        /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi28  -Wall -Wextra -Wno-long-long -Wshadow -Wundef -Wconversion -Wno-sign-conversion -Wno-missing-field-initializers -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++ -fwrapv -fvisibility=hidden -fvisibility-inlines-hidden -Wall -O2 -g -DNDEBUG -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections  CMakeFiles/cmTC_f21e6.dir/CheckIncludeFile.cxx.o -o cmTC_f21e6   -static-libstdc++ -latomic -lm 
+        gmake[1]: Leaving directory '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-1w7FqD'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckIncludeFileCXX.cmake:89 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckTypeSize.cmake:259 (check_include_file_cxx)"
+      - "external/jsoncpp/src/src/lib_json/CMakeLists.txt:15 (check_type_size)"
+    checks:
+      - "Looking for C++ include stdint.h"
+    directories:
+      source: "/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-2GLerL"
+      binary: "/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-2GLerL"
+    cmakeVariables:
+      CMAKE_ANDROID_STL_TYPE: "c++_static"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_CXX_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_CXX_COMPILER_TARGET: "armv7-none-linux-androideabi28"
+      CMAKE_CXX_FLAGS: " -Wall -Wextra -Wno-long-long -Wshadow -Wundef -Wconversion -Wno-sign-conversion -Wno-missing-field-initializers -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++ -fwrapv -fvisibility=hidden -fvisibility-inlines-hidden"
+      CMAKE_CXX_FLAGS_DEBUG: "-g  -fno-limit-debug-info"
+      CMAKE_C_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_C_COMPILER_TARGET: "armv7-none-linux-androideabi28"
+      CMAKE_EXE_LINKER_FLAGS: "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections"
+      CMAKE_MODULE_PATH: "/workspace/framework/delibs/cmake;/workspace/external/jsoncpp/cmake"
+    buildResult:
+      variable: "HAVE_STDINT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-2GLerL'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b19ef/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_b19ef.dir/build.make CMakeFiles/cmTC_b19ef.dir/build
+        gmake[1]: Entering directory '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-2GLerL'
+        Building CXX object CMakeFiles/cmTC_b19ef.dir/CheckIncludeFile.cxx.o
+        /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi28   -Wall -Wextra -Wno-long-long -Wshadow -Wundef -Wconversion -Wno-sign-conversion -Wno-missing-field-initializers -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++ -fwrapv -fvisibility=hidden -fvisibility-inlines-hidden -Wall -O2 -g -DNDEBUG -std=c++11 -MD -MT CMakeFiles/cmTC_b19ef.dir/CheckIncludeFile.cxx.o -MF CMakeFiles/cmTC_b19ef.dir/CheckIncludeFile.cxx.o.d -o CMakeFiles/cmTC_b19ef.dir/CheckIncludeFile.cxx.o -c /workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-2GLerL/CheckIncludeFile.cxx
+        Linking CXX executable cmTC_b19ef
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b19ef.dir/link.txt --verbose=1
+        /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi28  -Wall -Wextra -Wno-long-long -Wshadow -Wundef -Wconversion -Wno-sign-conversion -Wno-missing-field-initializers -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++ -fwrapv -fvisibility=hidden -fvisibility-inlines-hidden -Wall -O2 -g -DNDEBUG -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections  CMakeFiles/cmTC_b19ef.dir/CheckIncludeFile.cxx.o -o cmTC_b19ef   -static-libstdc++ -latomic -lm 
+        gmake[1]: Leaving directory '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-2GLerL'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckIncludeFileCXX.cmake:89 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckTypeSize.cmake:260 (check_include_file_cxx)"
+      - "external/jsoncpp/src/src/lib_json/CMakeLists.txt:15 (check_type_size)"
+    checks:
+      - "Looking for C++ include stddef.h"
+    directories:
+      source: "/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-49JWkc"
+      binary: "/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-49JWkc"
+    cmakeVariables:
+      CMAKE_ANDROID_STL_TYPE: "c++_static"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_CXX_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_CXX_COMPILER_TARGET: "armv7-none-linux-androideabi28"
+      CMAKE_CXX_FLAGS: " -Wall -Wextra -Wno-long-long -Wshadow -Wundef -Wconversion -Wno-sign-conversion -Wno-missing-field-initializers -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++ -fwrapv -fvisibility=hidden -fvisibility-inlines-hidden"
+      CMAKE_CXX_FLAGS_DEBUG: "-g  -fno-limit-debug-info"
+      CMAKE_C_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_C_COMPILER_TARGET: "armv7-none-linux-androideabi28"
+      CMAKE_EXE_LINKER_FLAGS: "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections"
+      CMAKE_MODULE_PATH: "/workspace/framework/delibs/cmake;/workspace/external/jsoncpp/cmake"
+    buildResult:
+      variable: "HAVE_STDDEF_H"
+      cached: true
+      stdout: |
+        Change Dir: '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-49JWkc'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e9075/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_e9075.dir/build.make CMakeFiles/cmTC_e9075.dir/build
+        gmake[1]: Entering directory '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-49JWkc'
+        Building CXX object CMakeFiles/cmTC_e9075.dir/CheckIncludeFile.cxx.o
+        /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi28   -Wall -Wextra -Wno-long-long -Wshadow -Wundef -Wconversion -Wno-sign-conversion -Wno-missing-field-initializers -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++ -fwrapv -fvisibility=hidden -fvisibility-inlines-hidden -Wall -O2 -g -DNDEBUG -std=c++11 -MD -MT CMakeFiles/cmTC_e9075.dir/CheckIncludeFile.cxx.o -MF CMakeFiles/cmTC_e9075.dir/CheckIncludeFile.cxx.o.d -o CMakeFiles/cmTC_e9075.dir/CheckIncludeFile.cxx.o -c /workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-49JWkc/CheckIncludeFile.cxx
+        Linking CXX executable cmTC_e9075
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e9075.dir/link.txt --verbose=1
+        /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi28  -Wall -Wextra -Wno-long-long -Wshadow -Wundef -Wconversion -Wno-sign-conversion -Wno-missing-field-initializers -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++ -fwrapv -fvisibility=hidden -fvisibility-inlines-hidden -Wall -O2 -g -DNDEBUG -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections  CMakeFiles/cmTC_e9075.dir/CheckIncludeFile.cxx.o -o cmTC_e9075   -static-libstdc++ -latomic -lm 
+        gmake[1]: Leaving directory '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-49JWkc'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckTypeSize.cmake:146 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckTypeSize.cmake:271 (__check_type_size_impl)"
+      - "external/jsoncpp/src/src/lib_json/CMakeLists.txt:15 (check_type_size)"
+    checks:
+      - "Check size of lconv"
+    directories:
+      source: "/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-50tDv6"
+      binary: "/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-50tDv6"
+    cmakeVariables:
+      CMAKE_ANDROID_STL_TYPE: "c++_static"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_CXX_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_CXX_COMPILER_TARGET: "armv7-none-linux-androideabi28"
+      CMAKE_CXX_FLAGS: " -Wall -Wextra -Wno-long-long -Wshadow -Wundef -Wconversion -Wno-sign-conversion -Wno-missing-field-initializers -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++ -fwrapv -fvisibility=hidden -fvisibility-inlines-hidden"
+      CMAKE_CXX_FLAGS_DEBUG: "-g  -fno-limit-debug-info"
+      CMAKE_C_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_C_COMPILER_TARGET: "armv7-none-linux-androideabi28"
+      CMAKE_EXE_LINKER_FLAGS: "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections"
+      CMAKE_MODULE_PATH: "/workspace/framework/delibs/cmake;/workspace/external/jsoncpp/cmake"
+    buildResult:
+      variable: "HAVE_LCONV_SIZE"
+      cached: true
+      stdout: |
+        Change Dir: '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-50tDv6'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_6e34f/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_6e34f.dir/build.make CMakeFiles/cmTC_6e34f.dir/build
+        gmake[1]: Entering directory '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-50tDv6'
+        Building CXX object CMakeFiles/cmTC_6e34f.dir/LCONV_SIZE.cpp.o
+        /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi28   -Wall -Wextra -Wno-long-long -Wshadow -Wundef -Wconversion -Wno-sign-conversion -Wno-missing-field-initializers -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++ -fwrapv -fvisibility=hidden -fvisibility-inlines-hidden -Wall -O2 -g -DNDEBUG -std=c++11 -MD -MT CMakeFiles/cmTC_6e34f.dir/LCONV_SIZE.cpp.o -MF CMakeFiles/cmTC_6e34f.dir/LCONV_SIZE.cpp.o.d -o CMakeFiles/cmTC_6e34f.dir/LCONV_SIZE.cpp.o -c /workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-50tDv6/LCONV_SIZE.cpp
+        Linking CXX executable cmTC_6e34f
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6e34f.dir/link.txt --verbose=1
+        /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi28  -Wall -Wextra -Wno-long-long -Wshadow -Wundef -Wconversion -Wno-sign-conversion -Wno-missing-field-initializers -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++ -fwrapv -fvisibility=hidden -fvisibility-inlines-hidden -Wall -O2 -g -DNDEBUG -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections  CMakeFiles/cmTC_6e34f.dir/LCONV_SIZE.cpp.o -o cmTC_6e34f   -static-libstdc++ -latomic -lm 
+        gmake[1]: Leaving directory '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-50tDv6'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckSourceCompiles.cmake:77 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckStructHasMember.cmake:79 (CHECK_SOURCE_COMPILES)"
+      - "external/jsoncpp/src/src/lib_json/CMakeLists.txt:17 (check_struct_has_member)"
+    checks:
+      - "Performing Test HAVE_DECIMAL_POINT"
+    directories:
+      source: "/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-JIkRNs"
+      binary: "/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-JIkRNs"
+    cmakeVariables:
+      CMAKE_ANDROID_STL_TYPE: "c++_static"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_CXX_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_CXX_COMPILER_TARGET: "armv7-none-linux-androideabi28"
+      CMAKE_CXX_FLAGS: " -Wall -Wextra -Wno-long-long -Wshadow -Wundef -Wconversion -Wno-sign-conversion -Wno-missing-field-initializers -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++ -fwrapv -fvisibility=hidden -fvisibility-inlines-hidden"
+      CMAKE_CXX_FLAGS_DEBUG: "-g  -fno-limit-debug-info"
+      CMAKE_C_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_C_COMPILER_TARGET: "armv7-none-linux-androideabi28"
+      CMAKE_EXE_LINKER_FLAGS: "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections"
+      CMAKE_MODULE_PATH: "/workspace/framework/delibs/cmake;/workspace/external/jsoncpp/cmake"
+    buildResult:
+      variable: "HAVE_DECIMAL_POINT"
+      cached: true
+      stdout: |
+        Change Dir: '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-JIkRNs'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f1e38/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_f1e38.dir/build.make CMakeFiles/cmTC_f1e38.dir/build
+        gmake[1]: Entering directory '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-JIkRNs'
+        Building CXX object CMakeFiles/cmTC_f1e38.dir/src.cxx.o
+        /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi28 -DHAVE_DECIMAL_POINT  -Wall -Wextra -Wno-long-long -Wshadow -Wundef -Wconversion -Wno-sign-conversion -Wno-missing-field-initializers -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++ -fwrapv -fvisibility=hidden -fvisibility-inlines-hidden -Wall -O2 -g -DNDEBUG -std=c++11 -MD -MT CMakeFiles/cmTC_f1e38.dir/src.cxx.o -MF CMakeFiles/cmTC_f1e38.dir/src.cxx.o.d -o CMakeFiles/cmTC_f1e38.dir/src.cxx.o -c /workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-JIkRNs/src.cxx
+        Linking CXX executable cmTC_f1e38
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f1e38.dir/link.txt --verbose=1
+        /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi28  -Wall -Wextra -Wno-long-long -Wshadow -Wundef -Wconversion -Wno-sign-conversion -Wno-missing-field-initializers -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++ -fwrapv -fvisibility=hidden -fvisibility-inlines-hidden -Wall -O2 -g -DNDEBUG -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections  CMakeFiles/cmTC_f1e38.dir/src.cxx.o -o cmTC_f1e38   -static-libstdc++ -latomic -lm 
+        gmake[1]: Leaving directory '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-JIkRNs'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckIncludeFileCXX.cmake:89 (try_compile)"
+      - "external/vulkancts/framework/vulkan/CMakeLists.txt:6 (check_include_file_cxx)"
+    checks:
+      - "Looking for C++ include /workspace/external/renderdoc/src/renderdoc_app.h"
+    directories:
+      source: "/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-3mTiu1"
+      binary: "/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-3mTiu1"
+    cmakeVariables:
+      CMAKE_ANDROID_STL_TYPE: "c++_static"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_CXX_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_CXX_COMPILER_TARGET: "armv7-none-linux-androideabi28"
+      CMAKE_CXX_FLAGS: " -Wall -Wextra -Wno-long-long -Wshadow -Wundef -Wconversion -Wno-sign-conversion -Wno-missing-field-initializers -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++ -fwrapv -fvisibility=hidden -fvisibility-inlines-hidden"
+      CMAKE_CXX_FLAGS_DEBUG: "-g  -fno-limit-debug-info"
+      CMAKE_C_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_C_COMPILER_TARGET: "armv7-none-linux-androideabi28"
+      CMAKE_EXE_LINKER_FLAGS: "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections"
+      CMAKE_MODULE_PATH: "/workspace/framework/delibs/cmake"
+    buildResult:
+      variable: "HAVE_RENDERDOC_APP_H"
+      cached: true
+      stdout: |
+        Change Dir: '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-3mTiu1'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_86d4d/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_86d4d.dir/build.make CMakeFiles/cmTC_86d4d.dir/build
+        gmake[1]: Entering directory '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-3mTiu1'
+        Building CXX object CMakeFiles/cmTC_86d4d.dir/CheckIncludeFile.cxx.o
+        /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi28   -Wall -Wextra -Wno-long-long -Wshadow -Wundef -Wconversion -Wno-sign-conversion -Wno-missing-field-initializers -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++ -fwrapv -fvisibility=hidden -fvisibility-inlines-hidden -Wall -O2 -g -DNDEBUG -std=gnu++17 -MD -MT CMakeFiles/cmTC_86d4d.dir/CheckIncludeFile.cxx.o -MF CMakeFiles/cmTC_86d4d.dir/CheckIncludeFile.cxx.o.d -o CMakeFiles/cmTC_86d4d.dir/CheckIncludeFile.cxx.o -c /workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-3mTiu1/CheckIncludeFile.cxx
+        Linking CXX executable cmTC_86d4d
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_86d4d.dir/link.txt --verbose=1
+        /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi28  -Wall -Wextra -Wno-long-long -Wshadow -Wundef -Wconversion -Wno-sign-conversion -Wno-missing-field-initializers -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++ -fwrapv -fvisibility=hidden -fvisibility-inlines-hidden -Wall -O2 -g -DNDEBUG -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections  CMakeFiles/cmTC_86d4d.dir/CheckIncludeFile.cxx.o -o cmTC_86d4d   -static-libstdc++ -latomic -lm 
+        gmake[1]: Leaving directory '/workspace/build-android-arm32/CMakeFiles/CMakeScratch/TryCompile-3mTiu1'
+        
+      exitCode: 0
+...

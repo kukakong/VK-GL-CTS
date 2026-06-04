@@ -1,0 +1,2 @@
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libdeqp-vk-imageless-framebuffer.a "CMakeFiles/deqp-vk-imageless-framebuffer.dir/vktImagelessFramebufferTests.cpp.o"
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libdeqp-vk-imageless-framebuffer.a

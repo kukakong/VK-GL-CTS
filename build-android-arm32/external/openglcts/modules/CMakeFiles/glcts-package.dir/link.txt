@@ -1,0 +1,2 @@
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libglcts-package.a "CMakeFiles/glcts-package.dir/glcTestPackageRegistry.cpp.o"
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libglcts-package.a

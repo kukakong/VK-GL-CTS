@@ -1,0 +1,2 @@
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libjsoncpp.a CMakeFiles/jsoncpp_static.dir/json_reader.cpp.o CMakeFiles/jsoncpp_static.dir/json_value.cpp.o CMakeFiles/jsoncpp_static.dir/json_writer.cpp.o
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libjsoncpp.a

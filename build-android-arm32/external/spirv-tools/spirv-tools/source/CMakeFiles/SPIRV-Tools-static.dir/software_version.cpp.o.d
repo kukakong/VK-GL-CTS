@@ -1,0 +1,25 @@
+external/spirv-tools/spirv-tools/source/CMakeFiles/SPIRV-Tools-static.dir/software_version.cpp.o: \
+  /workspace/external/spirv-tools/src/source/software_version.cpp \
+  /workspace/external/spirv-tools/src/include/spirv-tools/libspirv.h \
+  /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/c++/v1/stddef.h \
+  /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/c++/v1/__config \
+  /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/c++/v1/__config_site \
+  /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/features.h \
+  /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/sys/cdefs.h \
+  /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/android/versioning.h \
+  /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/android/api-level.h \
+  /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/bits/get_device_api_level_inlines.h \
+  /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/android/ndk-version.h \
+  /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include/stddef.h \
+  /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include/__stddef_ptrdiff_t.h \
+  /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include/__stddef_size_t.h \
+  /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include/__stddef_wchar_t.h \
+  /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include/__stddef_null.h \
+  /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include/__stddef_nullptr_t.h \
+  /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include/__stddef_max_align_t.h \
+  /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include/__stddef_offsetof.h \
+  /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/c++/v1/stdint.h \
+  /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/18/include/stdint.h \
+  /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/stdint.h \
+  /opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../sysroot/usr/include/bits/wchar_limits.h \
+  /workspace/build-android-arm32/external/spirv-tools/spirv-tools/build-version.inc

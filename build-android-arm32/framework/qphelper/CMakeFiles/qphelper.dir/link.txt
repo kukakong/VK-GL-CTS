@@ -1,0 +1,2 @@
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libqphelper.a CMakeFiles/qphelper.dir/qpCrashHandler.c.o CMakeFiles/qphelper.dir/qpDebugOut.c.o CMakeFiles/qphelper.dir/qpInfo.c.o CMakeFiles/qphelper.dir/qpTestLog.c.o CMakeFiles/qphelper.dir/qpWatchDog.c.o CMakeFiles/qphelper.dir/qpXmlWriter.c.o
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libqphelper.a

@@ -1,0 +1,2 @@
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libxexml.a CMakeFiles/xexml.dir/xeDefs.cpp.o CMakeFiles/xexml.dir/xeXMLParser.cpp.o
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libxexml.a

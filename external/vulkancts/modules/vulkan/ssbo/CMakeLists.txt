@@ -19,5 +19,7 @@ set(DEQP_VK_SSBO_SRCS
 add_library(deqp-vk-ssbo STATIC ${DEQP_VK_SSBO_SRCS})
 target_link_libraries(deqp-vk-ssbo tcutil vkutil)
 
-add_library(deqp-vksc-ssbo STATIC ${DEQP_VK_SSBO_SRCS})
-target_link_libraries(deqp-vksc-ssbo PUBLIC deqp-vksc-util tcutil vkscutil)
+if (NOT DEQP_DISABLE_VKSC)
+	add_library(deqp-vksc-ssbo STATIC ${DEQP_VK_SSBO_SRCS})
+	target_link_libraries(deqp-vksc-ssbo PUBLIC deqp-vksc-util tcutil vkscutil)
+endif()

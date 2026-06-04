@@ -1,0 +1,2 @@
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libdeutil.a CMakeFiles/deutil.dir/deClock.c.o CMakeFiles/deutil.dir/deCommandLine.c.o CMakeFiles/deutil.dir/deDynamicLibrary.c.o CMakeFiles/deutil.dir/deFile.c.o CMakeFiles/deutil.dir/deSocket.c.o CMakeFiles/deutil.dir/deTimer.c.o CMakeFiles/deutil.dir/deTimerTest.c.o CMakeFiles/deutil.dir/deProcess.c.o
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libdeutil.a

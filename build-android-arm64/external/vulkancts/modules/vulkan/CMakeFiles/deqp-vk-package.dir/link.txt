@@ -1,0 +1,2 @@
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libdeqp-vk-package.a "CMakeFiles/deqp-vk-package.dir/vktTestCase.cpp.o" "CMakeFiles/deqp-vk-package.dir/vktTestCaseUtil.cpp.o" "CMakeFiles/deqp-vk-package.dir/vktTestPackage.cpp.o" "CMakeFiles/deqp-vk-package.dir/vktShaderLibrary.cpp.o" "CMakeFiles/deqp-vk-package.dir/vktTestGroupUtil.cpp.o" "CMakeFiles/deqp-vk-package.dir/vktInfoTests.cpp.o" "CMakeFiles/deqp-vk-package.dir/vktContextManager.cpp.o"
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libdeqp-vk-package.a

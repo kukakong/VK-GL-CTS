@@ -1,0 +1,2 @@
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libdeqp-vk-fragment-shading-barycentric.a "CMakeFiles/deqp-vk-fragment-shading-barycentric.dir/vktFragmentShadingBarycentricTests.cpp.o"
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libdeqp-vk-fragment-shading-barycentric.a

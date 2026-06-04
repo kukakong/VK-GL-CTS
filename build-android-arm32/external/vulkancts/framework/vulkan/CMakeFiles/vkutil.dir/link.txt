@@ -1,0 +1,2 @@
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libvkutil.a CMakeFiles/vkutil.dir/vkPrograms.cpp.o CMakeFiles/vkutil.dir/vkShaderToSpirV.cpp.o CMakeFiles/vkutil.dir/vkSpirVAsm.cpp.o CMakeFiles/vkutil.dir/vkSpirVProgram.cpp.o
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libvkutil.a

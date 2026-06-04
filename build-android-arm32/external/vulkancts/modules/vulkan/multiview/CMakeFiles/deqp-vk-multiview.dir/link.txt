@@ -1,0 +1,2 @@
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libdeqp-vk-multiview.a "CMakeFiles/deqp-vk-multiview.dir/vktMultiViewTests.cpp.o" "CMakeFiles/deqp-vk-multiview.dir/vktMultiViewRenderPassUtil.cpp.o" "CMakeFiles/deqp-vk-multiview.dir/vktMultiViewRenderTests.cpp.o" "CMakeFiles/deqp-vk-multiview.dir/vktMultiViewRenderUtil.cpp.o"
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libdeqp-vk-multiview.a

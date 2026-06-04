@@ -1,0 +1,2 @@
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libdeqp-gles31-stress.a "CMakeFiles/deqp-gles31-stress.dir/es31sDrawTests.cpp.o" "CMakeFiles/deqp-gles31-stress.dir/es31sStressTests.cpp.o" "CMakeFiles/deqp-gles31-stress.dir/es31sVertexAttributeBindingTests.cpp.o" "CMakeFiles/deqp-gles31-stress.dir/es31sTessellationGeometryInteractionTests.cpp.o"
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libdeqp-gles31-stress.a

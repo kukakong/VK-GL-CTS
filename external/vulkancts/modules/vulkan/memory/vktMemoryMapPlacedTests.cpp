@@ -48,6 +48,11 @@
 #include "deStringUtil.hpp"
 #include "deMemory.h"
 #include "deInt32.h"
+
+// Android does not define MFD_CLOEXEC in older NDK versions
+#if defined(DE_OS_ANDROID) && !defined(MFD_CLOEXEC)
+#define MFD_CLOEXEC 0x0001U
+#endif
 #include "deSTLUtil.hpp"
 
 #include "gluShaderProgram.hpp"
@@ -168,9 +173,16 @@ public:
         const size_t guardSize = alignment;
         const size_t fileSize  = guardSize + alignment + alignedMemorySize + guardSize;
 
+#if defined(DE_OS_ANDROID)
+        // Android does not support memfd_create, use ashmem instead
+        int memfd = open("/dev/ashmem", O_RDWR);
+        if (memfd < 0)
+            TCU_THROW(NotSupportedError, "ashmem open failed - memfd_create not available on Android");
+#else
         int memfd = memfd_create("mapplaced-test", MFD_CLOEXEC);
         if (memfd < 0)
             TCU_THROW(NotSupportedError, "memfd_create failed");
+#endif
 
         if (ftruncate(memfd, static_cast<off_t>(fileSize)) < 0)
         {

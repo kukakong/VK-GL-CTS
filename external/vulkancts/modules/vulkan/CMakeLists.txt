@@ -124,8 +124,10 @@ set(DEQP_VK_VKSC_CUSTOM_INSTANCES_DEVICES_UTIL_SRCS
 add_library(deqp-vk-custom-instances-devices-util STATIC ${DEQP_VK_VKSC_CUSTOM_INSTANCES_DEVICES_UTIL_SRCS})
 target_link_libraries(deqp-vk-custom-instances-devices-util tcutil vkutil deqp-vk-video-config)
 
-add_library(deqp-vksc-custom-instances-devices-util STATIC ${DEQP_VK_VKSC_CUSTOM_INSTANCES_DEVICES_UTIL_SRCS})
-target_link_libraries(deqp-vksc-custom-instances-devices-util PUBLIC deqp-vksc-util tcutil vkscutil)
+if (NOT DEQP_DISABLE_VKSC)
+	add_library(deqp-vksc-custom-instances-devices-util STATIC ${DEQP_VK_VKSC_CUSTOM_INSTANCES_DEVICES_UTIL_SRCS})
+	target_link_libraries(deqp-vksc-custom-instances-devices-util PUBLIC deqp-vksc-util tcutil vkscutil)
+endif()
 
 set(DEQP_VK_SRCS
 	vktTestCaseDefs.hpp
@@ -207,56 +209,58 @@ list(APPEND DEQP_VK_LIBS
 	deqp-vk-video
 )
 
-set(DEQP_VKSC_LIBS
-	tcutil
-	vkscutil
-	glutil
-	deqp-vksc-api
-	deqp-vksc-pipeline
-	deqp-vksc-binding-model
-	deqp-vksc-spirv-assembly
-	deqp-vksc-shaderrender
-	deqp-vksc-shaderexecutor
-	deqp-vksc-memory
-	deqp-vksc-ubo
-	deqp-vksc-dynamic-state
-	deqp-vksc-ssbo
-	deqp-vksc-query-pool
-#x	deqp-vksc-conditional-rendering
-	deqp-vksc-draw
-	deqp-vksc-device-group
-	deqp-vksc-compute
-	deqp-vksc-image
-#x	deqp-vksc-wsi
-#x	deqp-vksc-sparse-resources
-	deqp-vksc-tessellation
-	deqp-vksc-rasterization
-	deqp-vksc-synchronization
-	deqp-vksc-clipping
-	deqp-vksc-fragment-ops
-	deqp-vksc-texture
-	deqp-vksc-geometry
-	deqp-vksc-robustness
-	deqp-vksc-render-pass
-	deqp-vksc-multiview
-	deqp-vksc-subgroups
-	deqp-vksc-ycbcr
-	deqp-vksc-protected-memory
-	deqp-vksc-memory-model
-#x	deqp-vksc-amber
-	deqp-vksc-imageless-framebuffer
-#x	deqp-vksc-transform-feedback
-	deqp-vksc-descriptor-indexing
-	deqp-vksc-fragment-shader-interlock
-#x	deqp-vksc-modifiers
-#x	deqp-vksc-ray-tracing
-#x	deqp-vksc-ray-query
-#x	deqp-vksc-postmortem
-	deqp-vksc-fragment-shading-rate
-	deqp-vksc-sc
-	deqp-vksc-cooperative_vector
-	deqp-vksc-custom-instances-devices-util
+if (NOT DEQP_DISABLE_VKSC)
+	set(DEQP_VKSC_LIBS
+		tcutil
+		vkscutil
+		glutil
+		deqp-vksc-api
+		deqp-vksc-pipeline
+		deqp-vksc-binding-model
+		deqp-vksc-spirv-assembly
+		deqp-vksc-shaderrender
+		deqp-vksc-shaderexecutor
+		deqp-vksc-memory
+		deqp-vksc-ubo
+		deqp-vksc-dynamic-state
+		deqp-vksc-ssbo
+		deqp-vksc-query-pool
+	#x	deqp-vksc-conditional-rendering
+		deqp-vksc-draw
+		deqp-vksc-device-group
+		deqp-vksc-compute
+		deqp-vksc-image
+	#x	deqp-vksc-wsi
+	#x	deqp-vksc-sparse-resources
+		deqp-vksc-tessellation
+		deqp-vksc-rasterization
+		deqp-vksc-synchronization
+		deqp-vksc-clipping
+		deqp-vksc-fragment-ops
+		deqp-vksc-texture
+		deqp-vksc-geometry
+		deqp-vksc-robustness
+		deqp-vksc-render-pass
+		deqp-vksc-multiview
+		deqp-vksc-subgroups
+		deqp-vksc-ycbcr
+		deqp-vksc-protected-memory
+		deqp-vksc-memory-model
+	#x	deqp-vksc-amber
+		deqp-vksc-imageless-framebuffer
+	#x	deqp-vksc-transform-feedback
+		deqp-vksc-descriptor-indexing
+		deqp-vksc-fragment-shader-interlock
+	#x	deqp-vksc-modifiers
+	#x	deqp-vksc-ray-tracing
+	#x	deqp-vksc-ray-query
+	#x	deqp-vksc-postmortem
+		deqp-vksc-fragment-shading-rate
+		deqp-vksc-sc
+		deqp-vksc-cooperative_vector
+		deqp-vksc-custom-instances-devices-util
 	)
+endif()
 
 
 if (DE_COMPILER_IS_MSC AND (DE_PTR_SIZE EQUAL 4))
@@ -267,7 +271,9 @@ PCH(DEQP_VK_SRCS pch.cpp)
 
 add_deqp_module(deqp-vk "${DEQP_VK_SRCS}" "${DEQP_VK_LIBS}" "tcutil-platform" vktTestPackageEntry.cpp )
 
-add_deqp_module_skip_android(deqp-vksc "${DEQP_VK_SRCS}" "${DEQP_VKSC_LIBS}" "tcutil-sc-platform" vktTestPackageEntrySC.cpp)
+if (NOT DEQP_DISABLE_VKSC)
+	add_deqp_module_skip_android(deqp-vksc "${DEQP_VK_SRCS}" "${DEQP_VKSC_LIBS}" "tcutil-sc-platform" vktTestPackageEntrySC.cpp)
+endif()
 
 add_data_dir(deqp-vk ../../data/vulkan vulkan)
 add_data_dir(deqp-vk ../../mustpass/main/vk-default vk-default)

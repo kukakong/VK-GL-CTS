@@ -1,0 +1,2 @@
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libdeqp-gles2-package.a "CMakeFiles/deqp-gles2-package.dir/tes2CapabilityTests.cpp.o" "CMakeFiles/deqp-gles2-package.dir/tes2Context.cpp.o" "CMakeFiles/deqp-gles2-package.dir/tes2InfoTests.cpp.o" "CMakeFiles/deqp-gles2-package.dir/tes2TestCase.cpp.o" "CMakeFiles/deqp-gles2-package.dir/tes2TestPackage.cpp.o"
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libdeqp-gles2-package.a

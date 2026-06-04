@@ -1,0 +1,2 @@
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libglcts-es3.a "CMakeFiles/glcts-es3.dir/es3cTestPackage.cpp.o" "CMakeFiles/glcts-es3.dir/es3cCopyTexImageConversionsTests.cpp.o" "CMakeFiles/glcts-es3.dir/es3cNumberParsingTests.cpp.o" "CMakeFiles/glcts-es3.dir/es3cDriverErrorTests.cpp.o"
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libglcts-es3.a

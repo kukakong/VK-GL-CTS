@@ -1,0 +1,2 @@
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libglutil-sglr.a "CMakeFiles/glutil-sglr.dir/sglrContext.cpp.o" "CMakeFiles/glutil-sglr.dir/sglrContextUtil.cpp.o" "CMakeFiles/glutil-sglr.dir/sglrContextWrapper.cpp.o" "CMakeFiles/glutil-sglr.dir/sglrReferenceContext.cpp.o" "CMakeFiles/glutil-sglr.dir/sglrReferenceUtils.cpp.o" "CMakeFiles/glutil-sglr.dir/sglrShaderProgram.cpp.o" "CMakeFiles/glutil-sglr.dir/sglrGLContext.cpp.o"
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libglutil-sglr.a

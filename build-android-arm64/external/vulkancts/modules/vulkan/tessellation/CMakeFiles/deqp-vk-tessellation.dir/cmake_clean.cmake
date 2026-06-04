@@ -1,0 +1,43 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationCommonEdgeTests.cpp.o"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationCommonEdgeTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationCoordinatesTests.cpp.o"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationCoordinatesTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationFractionalSpacingTests.cpp.o"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationFractionalSpacingTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationGeometryGridRenderTests.cpp.o"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationGeometryGridRenderTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationGeometryPassthroughTests.cpp.o"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationGeometryPassthroughTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationGeometryPointSizeTests.cpp.o"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationGeometryPointSizeTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationInvarianceTests.cpp.o"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationInvarianceTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationLimitsTests.cpp.o"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationLimitsTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationMatrixMultiplicationTests.cpp.o"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationMatrixMultiplicationTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationMaxIOTests.cpp.o"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationMaxIOTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationMiscDrawTests.cpp.o"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationMiscDrawTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationPrimitiveDiscardTests.cpp.o"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationPrimitiveDiscardTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationShaderInputOutputTests.cpp.o"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationShaderInputOutputTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationTests.cpp.o"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationUserDefinedIO.cpp.o"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationUserDefinedIO.cpp.o.d"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationUtil.cpp.o"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationUtil.cpp.o.d"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationWindingTests.cpp.o"
+  "CMakeFiles/deqp-vk-tessellation.dir/vktTessellationWindingTests.cpp.o.d"
+  "libdeqp-vk-tessellation.a"
+  "libdeqp-vk-tessellation.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/deqp-vk-tessellation.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

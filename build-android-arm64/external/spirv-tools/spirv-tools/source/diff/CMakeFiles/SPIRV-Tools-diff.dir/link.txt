@@ -1,0 +1,2 @@
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libSPIRV-Tools-diff.a "CMakeFiles/SPIRV-Tools-diff.dir/diff.cpp.o"
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libSPIRV-Tools-diff.a

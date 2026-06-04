@@ -16,5 +16,7 @@ set(DEQP_VK_DESCRIPTOR_INDEXING_SRCS
 add_library(deqp-vk-descriptor-indexing STATIC ${DEQP_VK_DESCRIPTOR_INDEXING_SRCS})
 target_link_libraries(deqp-vk-descriptor-indexing tcutil vkutil)
 
-add_library(deqp-vksc-descriptor-indexing STATIC ${DEQP_VK_DESCRIPTOR_INDEXING_SRCS})
-target_link_libraries(deqp-vksc-descriptor-indexing PUBLIC deqp-vksc-util tcutil vkscutil)
+if (NOT DEQP_DISABLE_VKSC)
+	add_library(deqp-vksc-descriptor-indexing STATIC ${DEQP_VK_DESCRIPTOR_INDEXING_SRCS})
+	target_link_libraries(deqp-vksc-descriptor-indexing PUBLIC deqp-vksc-util tcutil vkscutil)
+endif()

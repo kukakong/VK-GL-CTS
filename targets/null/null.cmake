@@ -22,6 +22,8 @@ message("*** Using null context target")
 
 set(DEQP_TARGET_NAME "Null")
 
+add_definitions(-DDE_PLATFORM_USE_LIBRARY_TYPE)
+
 set(TCUTIL_PLATFORM_SRCS
 	null/tcuNullPlatform.cpp
 	null/tcuNullPlatform.hpp

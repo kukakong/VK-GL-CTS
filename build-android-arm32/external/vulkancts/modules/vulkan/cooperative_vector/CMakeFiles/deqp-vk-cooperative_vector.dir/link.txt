@@ -1,0 +1,2 @@
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libdeqp-vk-cooperative_vector.a "CMakeFiles/deqp-vk-cooperative_vector.dir/vktCooperativeVectorTests.cpp.o" "CMakeFiles/deqp-vk-cooperative_vector.dir/vktCooperativeVectorBasicTests.cpp.o" "CMakeFiles/deqp-vk-cooperative_vector.dir/vktCooperativeVectorMatrixTests.cpp.o" "CMakeFiles/deqp-vk-cooperative_vector.dir/vktCooperativeVectorUtils.cpp.o"
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libdeqp-vk-cooperative_vector.a

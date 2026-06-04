@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/deqp-gles2-performance.dir/es2pBlendTests.cpp.o"
+  "CMakeFiles/deqp-gles2-performance.dir/es2pBlendTests.cpp.o.d"
+  "CMakeFiles/deqp-gles2-performance.dir/es2pDrawCallBatchingTests.cpp.o"
+  "CMakeFiles/deqp-gles2-performance.dir/es2pDrawCallBatchingTests.cpp.o.d"
+  "CMakeFiles/deqp-gles2-performance.dir/es2pPerformanceTests.cpp.o"
+  "CMakeFiles/deqp-gles2-performance.dir/es2pPerformanceTests.cpp.o.d"
+  "CMakeFiles/deqp-gles2-performance.dir/es2pRedundantStateChangeTests.cpp.o"
+  "CMakeFiles/deqp-gles2-performance.dir/es2pRedundantStateChangeTests.cpp.o.d"
+  "CMakeFiles/deqp-gles2-performance.dir/es2pShaderCompilationCases.cpp.o"
+  "CMakeFiles/deqp-gles2-performance.dir/es2pShaderCompilationCases.cpp.o.d"
+  "CMakeFiles/deqp-gles2-performance.dir/es2pShaderCompilerTests.cpp.o"
+  "CMakeFiles/deqp-gles2-performance.dir/es2pShaderCompilerTests.cpp.o.d"
+  "CMakeFiles/deqp-gles2-performance.dir/es2pShaderControlStatementTests.cpp.o"
+  "CMakeFiles/deqp-gles2-performance.dir/es2pShaderControlStatementTests.cpp.o.d"
+  "CMakeFiles/deqp-gles2-performance.dir/es2pShaderOperatorTests.cpp.o"
+  "CMakeFiles/deqp-gles2-performance.dir/es2pShaderOperatorTests.cpp.o.d"
+  "CMakeFiles/deqp-gles2-performance.dir/es2pShaderOptimizationTests.cpp.o"
+  "CMakeFiles/deqp-gles2-performance.dir/es2pShaderOptimizationTests.cpp.o.d"
+  "CMakeFiles/deqp-gles2-performance.dir/es2pStateChangeCallTests.cpp.o"
+  "CMakeFiles/deqp-gles2-performance.dir/es2pStateChangeCallTests.cpp.o.d"
+  "CMakeFiles/deqp-gles2-performance.dir/es2pStateChangeTests.cpp.o"
+  "CMakeFiles/deqp-gles2-performance.dir/es2pStateChangeTests.cpp.o.d"
+  "CMakeFiles/deqp-gles2-performance.dir/es2pTextureCases.cpp.o"
+  "CMakeFiles/deqp-gles2-performance.dir/es2pTextureCases.cpp.o.d"
+  "CMakeFiles/deqp-gles2-performance.dir/es2pTextureCountTests.cpp.o"
+  "CMakeFiles/deqp-gles2-performance.dir/es2pTextureCountTests.cpp.o.d"
+  "CMakeFiles/deqp-gles2-performance.dir/es2pTextureFilteringTests.cpp.o"
+  "CMakeFiles/deqp-gles2-performance.dir/es2pTextureFilteringTests.cpp.o.d"
+  "CMakeFiles/deqp-gles2-performance.dir/es2pTextureFormatTests.cpp.o"
+  "CMakeFiles/deqp-gles2-performance.dir/es2pTextureFormatTests.cpp.o.d"
+  "CMakeFiles/deqp-gles2-performance.dir/es2pTextureUploadTests.cpp.o"
+  "CMakeFiles/deqp-gles2-performance.dir/es2pTextureUploadTests.cpp.o.d"
+  "libdeqp-gles2-performance.a"
+  "libdeqp-gles2-performance.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/deqp-gles2-performance.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

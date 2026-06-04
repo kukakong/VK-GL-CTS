@@ -1,0 +1,2 @@
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libdepool.a CMakeFiles/depool.dir/deMemPool.c.o CMakeFiles/depool.dir/dePoolArray.c.o CMakeFiles/depool.dir/dePoolHeap.c.o CMakeFiles/depool.dir/dePoolHash.c.o CMakeFiles/depool.dir/dePoolHashArray.c.o CMakeFiles/depool.dir/dePoolHashSet.c.o CMakeFiles/depool.dir/dePoolMultiSet.c.o CMakeFiles/depool.dir/dePoolSet.c.o CMakeFiles/depool.dir/dePoolStringBuilder.c.o CMakeFiles/depool.dir/dePoolTest.c.o
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libdepool.a

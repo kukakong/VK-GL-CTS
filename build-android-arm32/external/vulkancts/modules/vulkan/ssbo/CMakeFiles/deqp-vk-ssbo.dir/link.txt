@@ -1,0 +1,2 @@
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libdeqp-vk-ssbo.a "CMakeFiles/deqp-vk-ssbo.dir/vktSSBOLayoutCase.cpp.o" "CMakeFiles/deqp-vk-ssbo.dir/vktSSBOLayoutTests.cpp.o" "CMakeFiles/deqp-vk-ssbo.dir/vktSSBOCornerCase.cpp.o" "CMakeFiles/deqp-vk-ssbo.dir/vktSSBOLayoutNestedUnsizedArraysTests.cpp.o" "CMakeFiles/deqp-vk-ssbo.dir/__/util/vktTypeComparisonUtil.cpp.o"
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libdeqp-vk-ssbo.a

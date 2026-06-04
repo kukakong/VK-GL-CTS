@@ -1,0 +1,2 @@
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libdebase.a CMakeFiles/debase.dir/deDefs.c.o CMakeFiles/debase.dir/deFloat16.c.o CMakeFiles/debase.dir/deFloat16Test.c.o CMakeFiles/debase.dir/deInt32.c.o CMakeFiles/debase.dir/deInt32Test.c.o CMakeFiles/debase.dir/deMath.c.o CMakeFiles/debase.dir/deMathTest.c.o CMakeFiles/debase.dir/deMemory.c.o CMakeFiles/debase.dir/deRandom.c.o CMakeFiles/debase.dir/deString.c.o CMakeFiles/debase.dir/deSha1.c.o
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libdebase.a

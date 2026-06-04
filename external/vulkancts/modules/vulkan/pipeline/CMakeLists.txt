@@ -183,14 +183,18 @@ PCH(DEQP_VK_PIPELINE_SRCS ../pch.cpp)
 add_library(deqp-vk-pipeline-util STATIC ${DEQP_VK_VKSC_PIPELINE_UTIL_SRCS})
 target_link_libraries(deqp-vk-pipeline-util libamber referencerenderer tcutil vkutil)
 
-add_library(deqp-vksc-pipeline-util STATIC ${DEQP_VK_VKSC_PIPELINE_UTIL_SRCS})
-target_link_libraries(deqp-vksc-pipeline-util PUBLIC referencerenderer deqp-vksc-util tcutil vkscutil)
+if (NOT DEQP_DISABLE_VKSC)
+	add_library(deqp-vksc-pipeline-util STATIC ${DEQP_VK_VKSC_PIPELINE_UTIL_SRCS})
+	target_link_libraries(deqp-vksc-pipeline-util PUBLIC referencerenderer deqp-vksc-util tcutil vkscutil)
+endif()
 
 add_library(deqp-vk-pipeline STATIC ${DEQP_VK_VKSC_PIPELINE_SRCS} ${DEQP_VK_PIPELINE_SRCS})
 target_link_libraries(deqp-vk-pipeline libamber referencerenderer tcutil vkutil)
 
-add_library(deqp-vksc-pipeline STATIC ${DEQP_VK_VKSC_PIPELINE_SRCS})
-target_link_libraries(deqp-vksc-pipeline PUBLIC referencerenderer deqp-vksc-util tcutil vkscutil)
+if (NOT DEQP_DISABLE_VKSC)
+	add_library(deqp-vksc-pipeline STATIC ${DEQP_VK_VKSC_PIPELINE_SRCS})
+	target_link_libraries(deqp-vksc-pipeline PUBLIC referencerenderer deqp-vksc-util tcutil vkscutil)
+endif()
 
 target_include_directories(deqp-vk-pipeline
 	PRIVATE
@@ -201,10 +205,12 @@ target_include_directories(deqp-vk-pipeline
 		../shader_object
 		${DEQP_INL_DIR}
 )
-target_include_directories(deqp-vksc-pipeline
-	PRIVATE
-		..
-		../../../../amber/src/include
-		../amber
-		../util
-)
+if (NOT DEQP_DISABLE_VKSC)
+	target_include_directories(deqp-vksc-pipeline
+		PRIVATE
+			..
+			../../../../amber/src/include
+			../amber
+			../util
+	)
+endif()

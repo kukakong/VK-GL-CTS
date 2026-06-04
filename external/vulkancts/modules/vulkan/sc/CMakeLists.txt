@@ -23,5 +23,7 @@ set(DEQP_VK_SC_SRCS
 
 PCH(DEQP_VK_SC_SRCS ../pch.cpp)
 
-add_library(deqp-vksc-sc STATIC ${DEQP_VK_SC_SRCS})
-target_link_libraries(deqp-vksc-sc PUBLIC deqp-vksc-util tcutil vkscutil)
+if (NOT DEQP_DISABLE_VKSC)
+	add_library(deqp-vksc-sc STATIC ${DEQP_VK_SC_SRCS})
+	target_link_libraries(deqp-vksc-sc PUBLIC deqp-vksc-util tcutil vkscutil)
+endif()

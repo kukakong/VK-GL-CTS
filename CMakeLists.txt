@@ -9,6 +9,7 @@ option(DEQP_ANDROID_EXE "Build dEQP modules as executables rather than a library
 option(DEQP_ANDROID_EXE_LOGCAT "Enable logging of dEQP output to logcat when using Android executables" OFF)
 option(DEQP_LOG_NODE_SOURCE "Log source code file and line where nodes are being added" OFF)
 option(DEQP_DISABLE_VK_VIDEO_TESTS "Disable Vulkan video tests (build but report as disabled)" OFF)
+option(DEQP_DISABLE_VKSC "Disable Vulkan SC tests and related components" OFF)
 
 # Target selection:
 # SELECTED_BUILD_TARGETS is a CMake option that can be set to a list of targets
@@ -151,7 +152,9 @@ add_subdirectory(external/jsoncpp EXCLUDE_FROM_ALL)
 include_directories(external/jsoncpp/src/include)
 
 # pipeline cache utils
-add_subdirectory(external/vulkansc-pcutil EXCLUDE_FROM_ALL)
+if (NOT DEQP_DISABLE_VKSC)
+	add_subdirectory(external/vulkansc-pcutil EXCLUDE_FROM_ALL)
+endif()
 
 # RenderDoc API
 include_directories(external/renderdoc/src)
@@ -442,8 +445,10 @@ endif ()
 
 add_subdirectory(modules ${MAYBE_EXCLUDE_FROM_ALL})
 add_subdirectory(external/vulkancts/modules/vulkan ${MAYBE_EXCLUDE_FROM_ALL})
-add_subdirectory(external/vulkancts/vkscserver ${MAYBE_EXCLUDE_FROM_ALL})
-add_subdirectory(external/vulkancts/vkscpc ${MAYBE_EXCLUDE_FROM_ALL})
+if (NOT DEQP_DISABLE_VKSC)
+	add_subdirectory(external/vulkancts/vkscserver ${MAYBE_EXCLUDE_FROM_ALL})
+	add_subdirectory(external/vulkancts/vkscpc ${MAYBE_EXCLUDE_FROM_ALL})
+endif()
 add_subdirectory(external/openglcts ${MAYBE_EXCLUDE_FROM_ALL})
 
 # Single-binary targets

@@ -1,0 +1,21 @@
+# Hashes of file build rules.
+9ff44ae2d0e81e2419cb1670a5d650fc external/spirv-tools/spirv-tools/CMakeFiles/spirv-tools-check-python-tests
+8685e959441fba8b3e17ea059a1bf77c external/spirv-tools/spirv-tools/CMakeFiles/spirv-tools-check-python-types
+38ac93b1cec54517e66111df5103f9b9 external/spirv-tools/spirv-tools/CMakeFiles/spirv-tools-pkg-config
+287f82a6da2ceba087f06853788a001e external/spirv-tools/spirv-tools/DebugInfo.h
+f510086e797f7a1361a86a7637fa9006 external/spirv-tools/spirv-tools/OpenCLDebugInfo100.h
+a2026855733c62074ff4f6b18fe20e14 external/spirv-tools/spirv-tools/SPIRV-Tools-shared.pc
+5edd4419abf3e10c4c5f687b20f1e1d1 external/spirv-tools/spirv-tools/SPIRV-Tools.pc
+801f33b94bc57c708515e129c149502f external/spirv-tools/spirv-tools/build-version.inc
+fd26401e25ab7aabf0250dff8b3af25e external/spirv-tools/spirv-tools/core_tables_body.inc
+5743f3e814fb9b0e9030dd6c9639d889 external/spirv-tools/spirv-tools/generators.inc
+a8930e7e4150dfd7e74bdf847177c484 external/spirv-tools/spirv-tools/source/CMakeFiles/core_tables
+a8930e7e4150dfd7e74bdf847177c484 external/spirv-tools/spirv-tools/source/CMakeFiles/extinst_tables
+a8930e7e4150dfd7e74bdf847177c484 external/spirv-tools/spirv-tools/source/CMakeFiles/spirv-tools-header-DebugInfo
+a8930e7e4150dfd7e74bdf847177c484 external/spirv-tools/spirv-tools/source/CMakeFiles/spirv-tools-header-OpenCLDebugInfo100
+a8930e7e4150dfd7e74bdf847177c484 external/spirv-tools/spirv-tools/source/CMakeFiles/spirv-tools-tables
+a8930e7e4150dfd7e74bdf847177c484 external/spirv-tools/spirv-tools/source/CMakeFiles/spirv-tools-vimsyntax
+de56be13bb96566904b5ee748150688b external/spirv-tools/spirv-tools/spvasm.vim
+61ca95971b519fe8e679dd7320997d90 framework/qphelper/CMakeFiles/git-rel-info
+1b1730cefd71cc4e5cbd96a3a455b641 framework/qphelper/qpReleaseInfo.inl
+e41503e40fb274397aa7e8c7f7ec5b26 src/vk-wrappers.inc.fake

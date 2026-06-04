@@ -1,0 +1,2 @@
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libdeqp-vk-descriptor-indexing.a "CMakeFiles/deqp-vk-descriptor-indexing.dir/vktDescriptorIndexingTests.cpp.o" "CMakeFiles/deqp-vk-descriptor-indexing.dir/vktDescriptorSetsIndexingTests.cpp.o" "CMakeFiles/deqp-vk-descriptor-indexing.dir/vktDescriptorSetsIndexingTestsUtils.cpp.o" "CMakeFiles/deqp-vk-descriptor-indexing.dir/vktDescriptorIndexingMiscTests.cpp.o"
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libdeqp-vk-descriptor-indexing.a

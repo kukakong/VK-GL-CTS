@@ -1,0 +1,2 @@
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libdeqp-gles2-accuracy.a "CMakeFiles/deqp-gles2-accuracy.dir/es2aAccuracyTests.cpp.o" "CMakeFiles/deqp-gles2-accuracy.dir/es2aTextureFilteringTests.cpp.o" "CMakeFiles/deqp-gles2-accuracy.dir/es2aTextureMipmapTests.cpp.o" "CMakeFiles/deqp-gles2-accuracy.dir/es2aVaryingInterpolationTests.cpp.o"
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libdeqp-gles2-accuracy.a

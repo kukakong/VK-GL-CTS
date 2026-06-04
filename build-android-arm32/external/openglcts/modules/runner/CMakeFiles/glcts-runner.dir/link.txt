@@ -1,0 +1,2 @@
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libglcts-runner.a "CMakeFiles/glcts-runner.dir/glcTestRunner.cpp.o" "CMakeFiles/glcts-runner.dir/glcAndroidTestActivity.cpp.o"
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libglcts-runner.a

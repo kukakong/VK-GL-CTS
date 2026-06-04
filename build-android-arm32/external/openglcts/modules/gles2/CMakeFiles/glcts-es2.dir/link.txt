@@ -1,0 +1,2 @@
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libglcts-es2.a "CMakeFiles/glcts-es2.dir/es2cTestPackage.cpp.o" "CMakeFiles/glcts-es2.dir/es2cTexture3DTests.cpp.o"
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libglcts-es2.a

@@ -80,11 +80,19 @@ Platform::~Platform(void)
 {
 }
 
+#ifdef DE_PLATFORM_USE_LIBRARY_TYPE
 vk::Library *Platform::createLibrary(vk::Platform::LibraryType, const char *libraryPath) const
 {
     DE_UNREF(libraryPath);
     return vk::createNullDriver();
 }
+#else
+vk::Library *Platform::createLibrary(const char *libraryPath) const
+{
+    DE_UNREF(libraryPath);
+    return vk::createNullDriver();
+}
+#endif
 
 void Platform::getMemoryLimits(tcu::PlatformMemoryLimits &limits) const
 {

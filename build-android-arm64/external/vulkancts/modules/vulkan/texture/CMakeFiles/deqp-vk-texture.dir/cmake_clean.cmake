@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/deqp-vk-texture.dir/vktSampleVerifier.cpp.o"
+  "CMakeFiles/deqp-vk-texture.dir/vktSampleVerifier.cpp.o.d"
+  "CMakeFiles/deqp-vk-texture.dir/vktSampleVerifierUtil.cpp.o"
+  "CMakeFiles/deqp-vk-texture.dir/vktSampleVerifierUtil.cpp.o.d"
+  "CMakeFiles/deqp-vk-texture.dir/vktTextureCompressedFormatTests.cpp.o"
+  "CMakeFiles/deqp-vk-texture.dir/vktTextureCompressedFormatTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-texture.dir/vktTextureConversionTests.cpp.o"
+  "CMakeFiles/deqp-vk-texture.dir/vktTextureConversionTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-texture.dir/vktTextureFilteringAnisotropyTests.cpp.o"
+  "CMakeFiles/deqp-vk-texture.dir/vktTextureFilteringAnisotropyTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-texture.dir/vktTextureFilteringExplicitLodTests.cpp.o"
+  "CMakeFiles/deqp-vk-texture.dir/vktTextureFilteringExplicitLodTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-texture.dir/vktTextureFilteringTests.cpp.o"
+  "CMakeFiles/deqp-vk-texture.dir/vktTextureFilteringTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-texture.dir/vktTextureMipmapTests.cpp.o"
+  "CMakeFiles/deqp-vk-texture.dir/vktTextureMipmapTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-texture.dir/vktTextureMultisampleTests.cpp.o"
+  "CMakeFiles/deqp-vk-texture.dir/vktTextureMultisampleTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-texture.dir/vktTextureShadowTests.cpp.o"
+  "CMakeFiles/deqp-vk-texture.dir/vktTextureShadowTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-texture.dir/vktTextureSubgroupLodTests.cpp.o"
+  "CMakeFiles/deqp-vk-texture.dir/vktTextureSubgroupLodTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-texture.dir/vktTextureSwizzleTests.cpp.o"
+  "CMakeFiles/deqp-vk-texture.dir/vktTextureSwizzleTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-texture.dir/vktTextureTestUtil.cpp.o"
+  "CMakeFiles/deqp-vk-texture.dir/vktTextureTestUtil.cpp.o.d"
+  "CMakeFiles/deqp-vk-texture.dir/vktTextureTests.cpp.o"
+  "CMakeFiles/deqp-vk-texture.dir/vktTextureTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-texture.dir/vktTextureTexelBufferTests.cpp.o"
+  "CMakeFiles/deqp-vk-texture.dir/vktTextureTexelBufferTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-texture.dir/vktTextureTexelOffsetTests.cpp.o"
+  "CMakeFiles/deqp-vk-texture.dir/vktTextureTexelOffsetTests.cpp.o.d"
+  "libdeqp-vk-texture.a"
+  "libdeqp-vk-texture.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/deqp-vk-texture.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

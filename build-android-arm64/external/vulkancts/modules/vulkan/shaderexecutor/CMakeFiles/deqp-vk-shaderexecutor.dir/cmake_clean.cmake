@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktAtomicOperationTests.cpp.o"
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktAtomicOperationTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktOpaqueTypeIndexingTests.cpp.o"
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktOpaqueTypeIndexingTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktShaderBFloat16ComboTests.cpp.o"
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktShaderBFloat16ComboTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktShaderBFloat16ConstantTests.cpp.o"
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktShaderBFloat16ConstantTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktShaderBFloat16DotTests.cpp.o"
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktShaderBFloat16DotTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktShaderBFloat16Tests.cpp.o"
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktShaderBFloat16Tests.cpp.o.d"
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktShaderBuiltinPrecisionTests.cpp.o"
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktShaderBuiltinPrecisionTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktShaderBuiltinTests.cpp.o"
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktShaderBuiltinTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktShaderClockTests.cpp.o"
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktShaderClockTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktShaderCommonFunctionTests.cpp.o"
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktShaderCommonFunctionTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktShaderExecutor.cpp.o"
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktShaderExecutor.cpp.o.d"
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktShaderExpectAssumeTests.cpp.o"
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktShaderExpectAssumeTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktShaderFConvertTests.cpp.o"
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktShaderFConvertTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktShaderHelperInvocationsTests.cpp.o"
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktShaderHelperInvocationsTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktShaderIntegerFunctionTests.cpp.o"
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktShaderIntegerFunctionTests.cpp.o.d"
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktShaderPackingFunctionTests.cpp.o"
+  "CMakeFiles/deqp-vk-shaderexecutor.dir/vktShaderPackingFunctionTests.cpp.o.d"
+  "libdeqp-vk-shaderexecutor.a"
+  "libdeqp-vk-shaderexecutor.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/deqp-vk-shaderexecutor.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

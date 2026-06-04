@@ -1,0 +1,2 @@
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libdestream.a CMakeFiles/destream.dir/deFileStream.c.o CMakeFiles/destream.dir/deRingbuffer.c.o CMakeFiles/destream.dir/deStreamCpyThread.c.o CMakeFiles/destream.dir/deThreadStream.c.o
+/opt/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib libdestream.a
