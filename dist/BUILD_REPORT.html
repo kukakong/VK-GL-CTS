@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VK-GL-CTS 编译报告</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        h1 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+        h2 {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            background-color: white;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        code {
+            background-color: #e8e8e8;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        pre {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .error-box {
+            background-color: #ffebee;
+            border-left: 4px solid #f44336;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .fix-box {
+            background-color: #e8f5e9;
+            border-left: 4px solid #4CAF50;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .info-box {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .summary-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .file-info {
+            display: inline-block;
+            background-color: #e8e8e8;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>VK-GL-CTS 编译报告</h1>
+    
+    <div class="summary-card">
+        <h2>编译环境</h2>
+        <ul>
+            <li><strong>日期</strong>: 2026-06-04</li>
+            <li><strong>操作系统</strong>: Linux</li>
+            <li><strong>编译器</strong>: Clang 18.0.3 (Android NDK r27c)</li>
+            <li><strong>目标平台</strong>: Android ARM64, Android ARM32</li>
+        </ul>
+    </div>
+
+    <h2>编译产物</h2>
+    
+    <h3>Android ARM64</h3>
+    <table>
+        <tr>
+            <th>文件</th>
+            <th>大小</th>
+            <th>描述</th>
+        </tr>
+        <tr>
+            <td><span class="file-info">android-arm64-vk.tar.gz</span></td>
+            <td>27MB</td>
+            <td>Vulkan CTS 测试程序 (deqp-vk)</td>
+        </tr>
+        <tr>
+            <td><span class="file-info">android-arm64-gl.tar.gz</span></td>
+            <td>14MB</td>
+            <td>OpenGL CTS 测试程序 (glcts)</td>
+        </tr>
+    </table>
+
+    <h3>Android ARM32</h3>
+    <table>
+        <tr>
+            <th>文件</th>
+            <th>大小</th>
+            <th>描述</th>
+        </tr>
+        <tr>
+            <td><span class="file-info">android-arm32-vk.tar.gz</span></td>
+            <td>25MB</td>
+            <td>Vulkan CTS 测试程序 (deqp-vk)</td>
+        </tr>
+        <tr>
+            <td><span class="file-info">android-arm32-gl.tar.gz</span></td>
+            <td>13MB</td>
+            <td>OpenGL CTS 测试程序 (glcts)</td>
+        </tr>
+    </table>
+
+    <h2>编译配置</h2>
+    
+    <h3>CMake 参数</h3>
+    <pre>-DCMAKE_TOOLCHAIN_FILE=/workspace/toolchain-android-arm64.cmake
+-DDEQP_TARGET=null
+-DCMAKE_BUILD_TYPE=Release
+-DDEQP_DISABLE_VKSC=ON
+-DDEQP_ANDROID_EXE=ON</pre>
+
+    <h3>工具链文件配置</h3>
+    <ul>
+        <li><strong>Android NDK</strong>: r27c</li>
+        <li><strong>API Level</strong>: 28</li>
+        <li><strong>STL</strong>: c++_static</li>
+        <li><strong>DE_OS</strong>: DE_OS_ANDROID</li>
+        <li><strong>DE_CPU</strong>: DE_CPU_ARM_64 / DE_CPU_ARM</li>
+    </ul>
+
+    <h2>问题修复记录</h2>
+
+    <h3>1. DE_OS 检测问题</h3>
+    <div class="error-box">
+        <strong>问题描述:</strong><br>
+        自定义工具链文件没有设置 <code>DE_OS</code> 为 <code>DE_OS_ANDROID</code>，导致代码走到 UNIX 分支，使用了 Android NDK 不支持的 <code>__assert_fail</code> 函数。
+        <pre>/workspace/framework/delibs/debase/deDefs.c:132:5: error: call to undeclared function '__assert_fail'</pre>
+    </div>
+    <div class="fix-box">
+        <strong>修复方案:</strong><br>
+        在工具链文件中添加：
+        <pre>set(DE_OS "DE_OS_ANDROID")
+set(DE_CPU "DE_CPU_ARM_64")
+set(DE_COMPILER "DE_COMPILER_CLANG")</pre>
+    </div>
+
+    <h3>2. VulkanSC 编译依赖问题</h3>
+    <div class="error-box">
+        <strong>问题描述:</strong><br>
+        vulkansc-pcutil 的 ExternalProject 配置没有正确传递 Android 工具链信息，导致编译失败。
+    </div>
+    <div class="fix-box">
+        <strong>修复方案:</strong><br>
+        添加 <code>DEQP_DISABLE_VKSC</code> 选项，禁用 VulkanSC 相关组件：
+        <pre>option(DEQP_DISABLE_VKSC "Disable Vulkan SC tests and related components" OFF)</pre>
+    </div>
+
+    <h3>3. DE_PLATFORM_USE_LIBRARY_TYPE 宏问题</h3>
+    <div class="error-box">
+        <strong>问题描述:</strong><br>
+        <code>tcu::null::Platform</code> 类的 <code>createLibrary</code> 方法签名与 <code>vk::Platform</code> 基类不匹配。
+        <pre>error: allocating an object of abstract class type 'tcu::null::Platform'
+note: unimplemented pure virtual method 'createLibrary' in 'Platform'</pre>
+    </div>
+    <div class="fix-box">
+        <strong>修复方案:</strong><br>
+        在 <code>tcuNullPlatform.hpp</code> 和 <code>tcuNullPlatform.cpp</code> 中添加条件编译：
+        <pre>#ifdef DE_PLATFORM_USE_LIBRARY_TYPE
+    virtual vk::Library *createLibrary(vk::Platform::LibraryType libraryType = vk::Platform::LIBRARY_TYPE_VULKAN,
+                                       const char *libraryPath = nullptr) const;
+#else
+    virtual vk::Library *createLibrary(const char *libraryPath = nullptr) const;
+#endif</pre>
+    </div>
+
+    <h3>4. MFD_CLOEXEC 未定义问题</h3>
+    <div class="error-box">
+        <strong>问题描述:</strong><br>
+        Android NDK 不定义 <code>MFD_CLOEXEC</code> 宏。
+    </div>
+    <div class="fix-box">
+        <strong>修复方案:</strong><br>
+        在 <code>vktMemoryMapPlacedTests.cpp</code> 中添加：
+        <pre>#if defined(DE_OS_ANDROID) && !defined(MFD_CLOEXEC)
+#define MFD_CLOEXEC 0x0001U
+#endif</pre>
+    </div>
+
+    <h3>5. memfd_create 不可用问题</h3>
+    <div class="error-box">
+        <strong>问题描述:</strong><br>
+        Android 不支持 <code>memfd_create</code> 系统调用。
+    </div>
+    <div class="fix-box">
+        <strong>修复方案:</strong><br>
+        在 Android 上使用 ashmem 替代：
+        <pre>#if defined(DE_OS_ANDROID)
+        int memfd = open("/dev/ashmem", O_RDWR);
+        if (memfd < 0)
+            TCU_THROW(NotSupportedError, "ashmem open failed - memfd_create not available on Android");
+#else
+        int memfd = memfd_create("mapplaced-test", MFD_CLOEXEC);
+#endif</pre>
+    </div>
+
+    <h3>6. Android APP vs EXE 编译模式问题</h3>
+    <div class="error-box">
+        <strong>问题描述:</strong><br>
+        默认编译模式为 Android APP，需要 JNI 相关文件，但缺少 <code>xsExecutionServer.hpp</code>。
+    </div>
+    <div class="fix-box">
+        <strong>修复方案:</strong><br>
+        使用 <code>DEQP_ANDROID_EXE=ON</code> 编译独立可执行文件。
+    </div>
+
+    <h2>使用说明</h2>
+
+    <h3>解压测试程序</h3>
+    <pre># Android ARM64
+tar -xzf android-arm64-vk.tar.gz
+tar -xzf android-arm64-gl.tar.gz
+
+# Android ARM32
+tar -xzf android-arm32-vk.tar.gz
+tar -xzf android-arm32-gl.tar.gz</pre>
+
+    <h3>推送到 Android 设备</h3>
+    <pre>adb push deqp-vk /data/local/tmp/
+adb shell chmod +x /data/local/tmp/deqp-vk
+adb shell /data/local/tmp/deqp-vk</pre>
+
+    <h2>文件验证</h2>
+
+    <h3>Android ARM64 可执行文件</h3>
+    <div class="info-box">
+        <pre>deqp-vk: ELF 64-bit LSB pie executable, ARM aarch64, dynamically linked, interpreter /system/bin/linker64
+glcts: ELF 64-bit LSB pie executable, ARM aarch64, dynamically linked, interpreter /system/bin/linker64</pre>
+    </div>
+
+    <h3>Android ARM32 可执行文件</h3>
+    <div class="info-box">
+        <pre>deqp-vk: ELF 32-bit LSB pie executable, ARM, EABI5, dynamically linked, interpreter /system/bin/linker
+glcts: ELF 32-bit LSB pie executable, ARM, EABI5, dynamically linked, interpreter /system/bin/linker</pre>
+    </div>
+
+</body>
+</html>
